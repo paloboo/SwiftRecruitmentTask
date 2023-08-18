@@ -1,6 +1,7 @@
 {
   "en": {
     "add_employee": "add employee",
+    "display_mode": "display mode",
     "earnings": "earnings",
     "edit": "edit",
     "email": "email",
@@ -16,6 +17,7 @@
   },
   "pl": {
     "add_employee": "dodaj pracownika",
+    "display_mode": "tryb wyświetlania",
     "earnings": "zarobki",
     "edit": "edytuj",
     "email": "e-mail",
