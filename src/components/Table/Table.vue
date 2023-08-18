@@ -101,6 +101,36 @@ export default {
 
 <style lang="scss" scoped>
     .table {
+        padding-top: 24px;
         width: 100%;
+
+        :deep(.table_row_dimensions) {
+            @media screen and (min-width: 1280px) {
+                &:first-of-type {
+                    width: 48px;
+                }
+                &:nth-of-type(2) {
+                    width: 98px;
+                }
+                &:nth-of-type(3) {
+                    width: 98px;
+                }
+                &:nth-of-type(4) {
+                    width: 298px;
+                }
+                &:nth-of-type(5) {
+                    width: 198px;
+                }
+                &:nth-of-type(6) {
+                    width: 148px;
+                }
+                &:nth-of-type(7) {
+                    width: 98px;
+                }
+                &:nth-of-type(8) {
+                    width: 178px;
+                }
+            }
+        }
     }
 </style>

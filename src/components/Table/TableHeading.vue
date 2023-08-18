@@ -1,6 +1,6 @@
 <template>
     <div class="table_heading">
-        <div class="heading_single row_dimensions" v-for="singleTitle in headingData">
+        <div class="heading_single table_row_dimensions" v-for="singleTitle in headingData">
             <p>{{$translations[currentLanguage][singleTitle]}}</p>
         </div>
     </div>
@@ -32,8 +32,16 @@ export default {
     .table_heading {
         display: none;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 1280px) {
             display: flex;
+        }
+
+        .heading_single {
+            padding-left: 8px;
+            p {
+                font-weight: 700;
+                text-transform: capitalize;
+            }
         }
     }
 </style>
