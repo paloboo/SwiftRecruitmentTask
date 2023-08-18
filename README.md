@@ -19,28 +19,6 @@ npm install -g json-server
 ```
 
 
-[//]: # (### Uruchomienie json-servera)
-
-[//]: # ()
-[//]: # (```sh)
-
-[//]: # (json-server --watch db.json)
-
-[//]: # (```)
-
-
-
-
-[//]: # (### Kompilacja i hot-reload podczas programowania)
-
-[//]: # ()
-[//]: # (```sh)
-
-[//]: # (npm run dev)
-
-[//]: # (```)
-
-
 ### Kompilacja i hot-reload podczas programowania
 
 ```sh

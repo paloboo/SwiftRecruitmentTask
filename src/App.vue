@@ -1,16 +1,18 @@
 <template>
-    <div>
-        <div>
-            <div v-for="employee in allEmployees">
-                <p>{{employee}}</p>
-            </div>
-        </div>
-    </div>
+    <Layout>
+        <Table :employees="allEmployees" v-if="allEmployees.length>0"/>
+    </Layout>
 </template>
 
 <script>
+import Layout from "./layouts/Layout.vue";
+import Table from "./components/Table/Table.vue";
 export default {
     name: "App",
+    components: {
+        Table,
+        Layout
+    },
     data() {
         return {
             allEmployees: [],
@@ -27,12 +29,13 @@ export default {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
+                    "id": "0",
                     "first_name": "Marya",
                     "last_name": "Jatczak",
                     "email": "mjatczak0@yolasite.com",
                     "gender": "Genderfluid",
                     "earnings": 21121.64,
-                    "experience": 2
+                    "experience": 2,
                 }),
             })
                 .then(response => response.json())
@@ -58,7 +61,7 @@ export default {
             .catch(error => {
                 console.error('Wystąpił błąd:', error);
             });
-    }
+    },
 }
 </script>
 
