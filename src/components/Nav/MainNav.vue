@@ -2,25 +2,41 @@
     <nav class="main_navigation">
         <div class="navigation_container">
             <Switcher @setCheckboxVal="changeDisplayStyle" :switcherTitle="$translations[language]['display_mode']+':'"/>
-            <p @click="changeLanguage">zmiana języka</p>
+            <Dropdown :options="languageOptions" :currentOption="language" direction="down" @optionChanged="(option) => changeLanguage(option)"/>
         </div>
     </nav>
 </template>
 
 <script>
+import Dropdown from "../InputElems/Dropdown.vue";
 import Switcher from "../InputElems/Switcher.vue";
 export default {
     name: "MainNav",
     components: {
+        Dropdown,
         Switcher
 
+    },
+    data() {
+        return {
+            languageOptions: [
+                {
+                    icon: 'PlFlagIcon',
+                    name: 'PL'
+                },
+                {
+                    icon: 'EnFlagIcon',
+                    name: 'EN'
+                }
+            ]
+        }
     },
     methods: {
         changeDisplayStyle() {
             this.displayMode === 'light' ? this.displayMode = 'dark' : this.displayMode = 'light'
         },
-        changeLanguage() {
-            this.language === 'pl' ? this.language = 'en' : this.language = 'pl'
+        changeLanguage(option) {
+            this.language = option.toLowerCase();
         }
     }
 }
@@ -36,6 +52,7 @@ export default {
         width: 100vw;
 
         .navigation_container {
+            align-items: center;
             display: flex;
             justify-content: space-between;
             margin: 0 auto;
@@ -52,6 +69,14 @@ export default {
 
             @media screen and (min-width: 1920px) {
                 max-width: 1450px;
+            }
+
+            .switch_wrapper {
+                min-width: 118px;
+            }
+
+            .dropdown {
+                height: max-content;
             }
         }
     }
