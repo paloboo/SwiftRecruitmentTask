@@ -10,7 +10,8 @@
     "gender": "gender",
     "id": "id",
     "last_name": "surname",
-    "remove": "remove"
+    "remove": "remove",
+    "results_per_page": "results per page"
   },
   "pl": {
     "add_employee": "dodaj pracownika",
@@ -23,6 +24,7 @@
     "gender": "płeć",
     "id": "id",
     "last_name": "nazwisko",
-    "remove": "usuń"
+    "remove": "usuń",
+    "results_per_page": "wyników na stronę"
   }
 }

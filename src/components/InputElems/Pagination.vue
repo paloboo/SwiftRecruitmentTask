@@ -1,10 +1,12 @@
 <template>
     <div class="pagination">
-        <select @change="(val) => handlePerPageChange(val.target.value)"> <!-- do zmiany na custom select -->
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-        </select>
+        <Dropdown
+            :currentOption="perPage"
+            :dropdownDesc="$translations[language]['results_per_page']"
+            isSmall
+            :options="dropdownOptions"
+            @optionChanged="(option) => handlePerPageChange(option)"
+        />
         <div class="pagination_buttons">
             <div class="buttons_single prev" @click="handleArrowClick('down')">
                 <ArrowHeadIcon />
@@ -23,9 +25,13 @@
 
 <script>
 import ArrowHeadIcon from "../Icons/ArrowHeadIcon.vue";
+import Dropdown from "./Dropdown.vue";
 export default {
     name: "Pagination",
-    components: {ArrowHeadIcon},
+    components: {
+        ArrowHeadIcon,
+        Dropdown,
+    },
     props: {
         totalAmount: {
             type: Number,
@@ -35,6 +41,7 @@ export default {
     data() {
         return {
             currentPage: 1,
+            dropdownOptions: [10, 20, 50],
             perPage: 10,
         }
     },
