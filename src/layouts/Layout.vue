@@ -19,7 +19,9 @@ export default {
 
 <style scoped lang="scss">
     .layout {
+        background-color: v-bind('displayColorGetter("neutral0")');
         overflow: hidden;
+        transition: background-color .3s ease-in-out;
 
         .layout_container {
             margin: 0 auto;
@@ -35,6 +37,26 @@ export default {
 
             @media screen and (min-width: 1920px) {
                 max-width: 1450px;
+            }
+
+            :deep(span),
+            :deep(a),
+            :deep(h1),
+            :deep(h2),
+            :deep(h3),
+            :deep(h4),
+            :deep(h5),
+            :deep(p),{
+                color: v-bind('displayColorGetter("neutral900")');
+                transition: color .3s ease-in-out;
+            }
+
+            :deep(a) {
+                &:hover {
+                    @media screen and (min-width: 1280px) {
+                        color: v-bind('displayColorGetter("zinc500")');
+                    }
+                }
             }
         }
     }

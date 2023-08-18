@@ -2,10 +2,12 @@
     <div class="table">
         <TableHeading
             :headingData="Object.keys(employees[0])"
+            :currentLanguage="currentLanguageCp"
             :translations="translations"
         />
         <TableRow
             :key="row.id"
+            :currentLanguage="currentLanguageCp"
             :tableRowData="row"
             :translations="translations"
             v-for="row in employees"
@@ -52,6 +54,11 @@ export default {
             }
         }
     },
+    computed: {
+        currentLanguageCp() {
+            return this.language
+        }
+    }
 }
 </script>
 

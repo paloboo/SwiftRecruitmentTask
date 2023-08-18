@@ -1,7 +1,7 @@
 <template>
     <div class="table_heading">
         <div class="heading_single row_dimensions" v-for="singleTitle in headingData">
-            <p>{{translations[languageCp][singleTitle]}}</p>
+            <p>{{translations[currentLanguage][singleTitle]}}</p>
         </div>
     </div>
 </template>
@@ -16,7 +16,11 @@ export default {
                 return []
             }
         },
-        translation: {
+        currentLanguage: {
+            type: String,
+            default: ''
+        },
+        translations: {
             type: Object,
             default() {
                 return {
@@ -29,11 +33,6 @@ export default {
         return {
         }
     },
-    computed: {
-        languageCp() {
-            return this.language
-        }
-    }
 }
 </script>
 
