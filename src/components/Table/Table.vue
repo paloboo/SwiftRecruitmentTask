@@ -8,8 +8,11 @@
         </div>
         <template v-if="allEmployees.length>0">
             <TableHeading
-                :headingData="Object.keys(allEmployees[0])"
                 :currentLanguage="currentLanguageCp"
+                :headingData="Object.keys(allEmployees[0])"
+                :sortedBy="sortedBy"
+                :sortingAsc="sortingAsc"
+                @sort="sort"
             />
             <TableRow
                 :currentLanguage="currentLanguageCp"
@@ -46,6 +49,8 @@ export default {
                 from: 0,
                 to: 10,
             },
+            sortedBy: '',
+            sortingAsc: true,
         }
     },
     methods: {
@@ -59,6 +64,19 @@ export default {
         handleRemoveButtonClicked(selectedRow) {
             console.log('edit')
             console.log(selectedRow)
+        },
+        sort(column) {
+            if (column === this.sortedBy) {
+                this.sortingAsc = !this.sortingAsc;
+            } else {
+                this.sortingAsc = true;
+            }
+            this.sortedBy = column;
+            if (this.sortingAsc) {
+                this.allEmployees = this.allEmployees.sort((a,b) => a[this.sortedBy] > b[this.sortedBy] ? 1 : -1);
+            } else {
+                this.allEmployees = this.allEmployees.sort((a,b) => a[this.sortedBy] > b[this.sortedBy] ? -1 : 1);
+            }
         }
         //     fetch('http://localhost:3000/employees/1', {
         //         method: 'PUT',

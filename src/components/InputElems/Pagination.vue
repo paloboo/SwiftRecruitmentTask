@@ -11,7 +11,7 @@
             <div class="buttons_single prev" :class="{'disabled': currentPage===1}" @click="handleArrowClick('down')">
                 <ArrowHeadIcon />
             </div>
-            <div v-for="page in paginationArrayCp" :key="page" @click="handleCurrentPageChange(page)" class="buttons_single" :class="{'current': Number(page)===currentPage}">
+            <div v-for="page in paginationArrayCp" :key="page" @click="handleCurrentPageChange(page)" class="buttons_single" :class="{'current': Number(page)===currentPage, 'disabled': isNaN(Number(page))}">
                 <span>
                     {{page}}
                 </span>
