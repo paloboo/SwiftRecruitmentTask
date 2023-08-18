@@ -1,5 +1,11 @@
 <template>
     <div class="table">
+        <div class="table_title">
+            <h1>{{$translations[currentLanguageCp]['employee_list']}}</h1>
+            <Btn type="add">
+                {{$translations[currentLanguageCp]['add_employee']}}
+            </Btn>
+        </div>
         <template v-if="allEmployees.length>0">
             <TableHeading
                 :headingData="Object.keys(allEmployees[0])"
@@ -20,6 +26,7 @@
 </template>
 
 <script>
+import Btn from "../InputElems/Btn.vue";
 import Pagination from "../InputElems/Pagination.vue";
 import TableHeading from "./TableHeading.vue";
 import TableRow from "./TableRow.vue";
@@ -27,6 +34,7 @@ import TableRow from "./TableRow.vue";
 export default {
     name: "Table",
     components: {
+        Btn,
         Pagination,
         TableHeading,
         TableRow,
@@ -104,6 +112,20 @@ export default {
         padding-top: 24px;
         width: 100%;
 
+        .table_title {
+            h1 {
+                font-size: 32px;
+                line-height: 48px;
+                text-transform: capitalize;
+            }
+
+            @media screen and (min-width: 768px) {
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
         :deep(.table_row_dimensions) {
             @media screen and (min-width: 1280px) {
                 &:first-of-type {
@@ -129,6 +151,32 @@ export default {
                 }
                 &:nth-of-type(8) {
                     width: 178px;
+                }
+            }
+            @media screen and (min-width: 1920px) {
+                &:first-of-type {
+                    width: 88px;
+                }
+                &:nth-of-type(2) {
+                    width: 138px;
+                }
+                &:nth-of-type(3) {
+                    width: 138px;
+                }
+                &:nth-of-type(4) {
+                    width: 348px;
+                }
+                &:nth-of-type(5) {
+                    width: 238px;
+                }
+                &:nth-of-type(6) {
+                    width: 158px;
+                }
+                &:nth-of-type(7) {
+                    width: 120px;
+                }
+                &:nth-of-type(8) {
+                    width: 204px;
                 }
             }
         }

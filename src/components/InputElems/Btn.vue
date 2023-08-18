@@ -23,6 +23,7 @@ export default {
         border: 1px solid transparent;
         border-radius: 4px;
         cursor: pointer;
+        height: max-content;
         outline: 1px solid transparent;
         padding: 4px 12px;
         transition: background-color .3s ease-in-out;
@@ -39,6 +40,14 @@ export default {
             font-weight: 500;
             line-height: 18px;
             text-transform: capitalize;
+        }
+
+        &.add {
+            background-color: v-bind('displayColorGetter("green400")');
+
+            span {
+                color: v-bind('displayColorGetter("gray800")');
+            }
         }
 
         &.edit {

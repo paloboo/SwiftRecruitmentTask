@@ -1,8 +1,10 @@
 {
   "en": {
+    "add_employee": "add employee",
     "earnings": "earnings",
     "edit": "edit",
     "email": "email",
+    "employee_list": "employee list",
     "experience": "experience",
     "first_name": "name",
     "gender": "gender",
@@ -11,9 +13,11 @@
     "remove": "remove"
   },
   "pl": {
+    "add_employee": "dodaj pracownika",
     "earnings": "zarobki",
     "edit": "edytuj",
     "email": "e-mail",
+    "employee_list": "lista pracowników",
     "experience": "doświadczenie",
     "first_name": "imię",
     "gender": "płeć",

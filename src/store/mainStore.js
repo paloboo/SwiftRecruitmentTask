@@ -39,6 +39,10 @@ export default defineStore('mainStore', {
                 light: '#141414',
                 dark: '#222222',
             },
+            green400: {
+                light: '#74E39A',
+                dark: '#01B636',
+            },
             neutral0: {
                 light: '#FFFFFF',
                 dark: '#222222',

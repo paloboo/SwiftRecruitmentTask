@@ -1,6 +1,7 @@
 <template>
     <nav class="main_navigation">
         <p @click="changeDisplayStyle"> zmiana koloru</p>
+        <p @click="changeLanguage">zmiana języka</p>
     </nav>
 </template>
 
@@ -12,11 +13,10 @@ export default {
     },
     methods: {
         changeDisplayStyle() {
-            if (this.displayMode === 'light') {
-                this.displayMode = 'dark'
-            } else {
-                this.displayMode = 'light'
-            }
+            this.displayMode === 'light' ? this.displayMode = 'dark' : this.displayMode = 'light'
+        },
+        changeLanguage() {
+            this.language === 'pl' ? this.language = 'en' : this.language = 'pl'
         }
     }
 }
@@ -25,6 +25,8 @@ export default {
 <style lang="scss" scoped>
     .main_navigation {
         background-color: v-bind('displayColorGetter("gray200")');
+        display: flex;
+        justify-content: space-between;
         height: 40px;
         transition: background-color .3s ease-in-out;
         width: 100vw;

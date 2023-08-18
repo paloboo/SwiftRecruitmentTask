@@ -31,6 +31,7 @@ export default {
 <style lang="scss" scoped>
     .table_heading {
         display: none;
+        margin-top: 32px;
 
         @media screen and (min-width: 1280px) {
             display: flex;
