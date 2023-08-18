@@ -10,18 +10,24 @@
             :currentLanguage="currentLanguageCp"
             :tableRowData="row"
             :translations="translations"
-            v-for="row in employees"
+            v-for="row in employees.slice(paginationRange.from, paginationRange.to)"
         />
+        <Pagination :totalAmount="employees.length" @rangeChanged="handlePaginationRangeChange"/>
     </div>
 </template>
 
 <script>
+import Pagination from "../InputElems/Pagination.vue";
 import TableHeading from "./TableHeading.vue";
 import TableRow from "./TableRow.vue";
 
 export default {
     name: "Table",
-    components: {TableRow, TableHeading},
+    components: {
+        Pagination,
+        TableHeading,
+        TableRow,
+    },
     props: {
         employees: {
             type: Array,
@@ -32,26 +38,35 @@ export default {
     },
     data() {
         return {
+            paginationRange: {
+                from: 0,
+                to: 10,
+            },
             translations: {
                 en: {
-                    id: 'id',
-                    first_name: 'name',
-                    last_name: 'surname',
-                    email: 'email',
-                    gender: 'gender',
                     earnings: 'earnings',
+                    email: 'email',
                     experience: 'experience',
+                    first_name: 'name',
+                    gender: 'gender',
+                    id: 'id',
+                    last_name: 'surname',
                 },
                 pl: {
-                    id: 'id',
-                    first_name: 'imię',
-                    last_name: 'nazwisko',
-                    email: 'e-mail',
-                    gender: 'płeć',
                     earnings: 'zarobki',
+                    email: 'e-mail',
                     experience: 'doświadczenie',
+                    first_name: 'imię',
+                    gender: 'płeć',
+                    id: 'id',
+                    last_name: 'nazwisko',
                 }
             }
+        }
+    },
+    methods: {
+        handlePaginationRangeChange(range) {
+            this.paginationRange = {...range}
         }
     },
     computed: {
