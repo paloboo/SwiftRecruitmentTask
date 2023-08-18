@@ -1,18 +1,21 @@
 <template>
     <div class="table">
-        <TableHeading
-            :headingData="Object.keys(employees[0])"
-            :currentLanguage="currentLanguageCp"
-            :translations="translations"
-        />
-        <TableRow
-            :key="row.id"
-            :currentLanguage="currentLanguageCp"
-            :tableRowData="row"
-            :translations="translations"
-            v-for="row in employees.slice(paginationRange.from, paginationRange.to)"
-        />
-        <Pagination :totalAmount="employees.length" @rangeChanged="handlePaginationRangeChange"/>
+        <template v-if="allEmployees.length>0">
+            <TableHeading
+                :headingData="Object.keys(allEmployees[0])"
+                :currentLanguage="currentLanguageCp"
+            />
+            <TableRow
+                :currentLanguage="currentLanguageCp"
+                :tableRowData="row"
+                v-for="row in allEmployees.slice(paginationRange.from, paginationRange.to)"
+                :key="row.id"
+
+                @edit="handleEditButtonClicked"
+                @remove="handleRemoveButtonClicked"
+            />
+            <Pagination :totalAmount="allEmployees.length" @rangeChanged="handlePaginationRangeChange"/>
+        </template>
     </div>
 </template>
 
@@ -28,58 +31,76 @@ export default {
         TableHeading,
         TableRow,
     },
-    props: {
-        employees: {
-            type: Array,
-            default() {
-                return []
-            }
-        }
-    },
     data() {
         return {
+            allEmployees: [],
             paginationRange: {
                 from: 0,
                 to: 10,
             },
-            translations: {
-                en: {
-                    earnings: 'earnings',
-                    email: 'email',
-                    experience: 'experience',
-                    first_name: 'name',
-                    gender: 'gender',
-                    id: 'id',
-                    last_name: 'surname',
-                },
-                pl: {
-                    earnings: 'zarobki',
-                    email: 'e-mail',
-                    experience: 'doświadczenie',
-                    first_name: 'imię',
-                    gender: 'płeć',
-                    id: 'id',
-                    last_name: 'nazwisko',
-                }
-            }
         }
     },
     methods: {
+        handleEditButtonClicked(selectedRow) {
+            console.log('remove')
+            console.log(selectedRow)
+        },
         handlePaginationRangeChange(range) {
             this.paginationRange = {...range}
+        },
+        handleRemoveButtonClicked(selectedRow) {
+            console.log('edit')
+            console.log(selectedRow)
         }
+        //     fetch('http://localhost:3000/employees/1', {
+        //         method: 'PUT',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify({
+        //             "id": "0",
+        //             "first_name": "Marya",
+        //             "last_name": "Jatczak",
+        //             "email": "mjatczak0@yolasite.com",
+        //             "gender": "Genderfluid",
+        //             "earnings": 21121.64,
+        //             "experience": 2,
+        //         }),
+        //     })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             console.log('Zaktualizowano pracownika:', data);
+        //         })
+        //         .catch(error => {
+        //             console.error('Wystąpił błąd:', error);
+        //         });
+        // }
     },
     computed: {
         currentLanguageCp() {
             return this.language
         }
-    }
+    },
+    created() {
+        fetch('http://localhost:3000/employees')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                this.allEmployees = data;
+            })
+            .catch(error => {
+                console.error('Wystąpił błąd:', error);
+            });
+    },
 }
 </script>
 
 <style lang="scss" scoped>
     .table {
-        overflow-x: scroll;
         width: 100%;
     }
 </style>

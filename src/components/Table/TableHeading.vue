@@ -1,7 +1,7 @@
 <template>
     <div class="table_heading">
         <div class="heading_single row_dimensions" v-for="singleTitle in headingData">
-            <p>{{translations[currentLanguage][singleTitle]}}</p>
+            <p>{{$translations[currentLanguage][singleTitle]}}</p>
         </div>
     </div>
 </template>
@@ -20,14 +20,6 @@ export default {
             type: String,
             default: ''
         },
-        translations: {
-            type: Object,
-            default() {
-                return {
-
-                }
-            }
-        }
     },
     data() {
         return {

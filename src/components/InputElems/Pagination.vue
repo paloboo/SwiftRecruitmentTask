@@ -149,10 +149,6 @@ export default {
                     background-color:v-bind('displayColorGetter("gray400")');
                     border: 1px solid v-bind('displayColorGetter("gray400")');
                     pointer-events: none;
-
-                    span {
-                        color: red;
-                    }
                 }
             }
         }

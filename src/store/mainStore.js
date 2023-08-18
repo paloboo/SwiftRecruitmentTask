@@ -11,6 +11,10 @@ export default defineStore('mainStore', {
                 light: '#E5F0FF',
                 dark: '#193153',
             },
+            blue500: {
+                light: '#EFF0FF',
+                dark: '#253153'
+            },
             blue800: {
                 light: '#0060EF',
                 dark: '#4D94FF',
@@ -93,7 +97,7 @@ export default defineStore('mainStore', {
             }
         },
         displayMode: 'light',
-        language: 'en',
+        language: 'pl',
     }),
     getters: {
         displayColorGetter: (state) => {

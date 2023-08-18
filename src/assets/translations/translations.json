@@ -1,0 +1,24 @@
+{
+  "en": {
+    "earnings": "earnings",
+    "edit": "edit",
+    "email": "email",
+    "experience": "experience",
+    "first_name": "name",
+    "gender": "gender",
+    "id": "id",
+    "last_name": "surname",
+    "remove": "remove"
+  },
+  "pl": {
+    "earnings": "zarobki",
+    "edit": "edytuj",
+    "email": "e-mail",
+    "experience": "doświadczenie",
+    "first_name": "imię",
+    "gender": "płeć",
+    "id": "id",
+    "last_name": "nazwisko",
+    "remove": "usuń"
+  }
+}
