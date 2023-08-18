@@ -112,10 +112,23 @@ export default {
 
 <style lang="scss" scoped>
     .pagination {
+        @media screen and (min-width: 768px) {
+            margin-top: 48px;
+            position: relative;
+        }
+
+        .dropdown {
+            @media screen and (min-width: 768px) {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+            }
+        }
+
         .pagination_buttons {
             display: flex;
             gap: 4px;
-            margin: 16px auto;
+            margin: 32px auto;
             max-width: 100%;
             width: max-content;
 
