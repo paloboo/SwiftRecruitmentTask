@@ -20,6 +20,7 @@ export default {
 <style scoped lang="scss">
     .layout {
         background-color: v-bind('displayColorGetter("neutral0")');
+        min-height: 100vh;
         overflow: hidden;
         transition: background-color .3s ease-in-out;
 

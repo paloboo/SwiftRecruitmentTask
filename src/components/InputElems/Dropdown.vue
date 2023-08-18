@@ -77,6 +77,10 @@ export default {
 
 <style lang="scss" scoped>
     .dropdown {
+        @media screen and (min-width: 1280px) {
+            position: relative;
+        }
+
         .dropdown_chosen_option {
             cursor: pointer;
             .chosen_option_desc {
@@ -89,7 +93,7 @@ export default {
             }
             .chosen_option_value {
                 align-items: center;
-                border: 1px solid v-bind("displayColorGetter('neutral900')");
+                border: 1px solid v-bind("displayColorGetter('gray600')");
                 border-radius: 4px;
                 display: flex;
                 height: 40px;
@@ -131,6 +135,20 @@ export default {
             transition: opacity .3s ease-in-out;
             width: 100vw;
 
+            @media screen and (min-width: 1280px) {
+                bottom: 24px;
+                height: max-content;
+                left: 0;
+                max-height: 0;
+                opacity: 1;
+                overflow: hidden;
+                position: absolute;
+                top: unset;
+                right: unset;
+                transition: max-height .3s ease-in-out;
+                width: 328px;
+            }
+
             .list_content {
                 background-color: v-bind('displayColorGetter("neutral0")');
                 border-radius: 8px;
@@ -140,6 +158,11 @@ export default {
                 width: calc(100% - 32px);
                 z-index: 2;
 
+                @media screen and (min-width: 1280px) {
+                    border: 1px solid v-bind('displayColorGetter("blue500")');
+                    width: 100%;
+                }
+
                 .content_mobile_top_bar {
                     align-items: center;
                     background-color: v-bind('displayColorGetter("gray600")');
@@ -148,6 +171,10 @@ export default {
                     height: 24px;
                     padding: 0 8px;
                     width: 100%;
+
+                    @media screen and (min-width: 1280px) {
+                        display: none;
+                    }
 
                     .top_bar_close_wrapper {
                         width: 16px;
@@ -164,7 +191,16 @@ export default {
                     padding: 8px;
 
                     .content_single {
+                        border-radius: 8px;
                         padding: 8px 12px;
+                        transition: background-color .3s ease-in-out;
+
+                        &:hover {
+                            @media screen and (min-width: 1280px) {
+                                background-color: v-bind('displayColorGetter("gray100")');
+                                cursor: pointer;
+                            }
+                        }
 
                         &.current {
                             border-bottom: 1px solid transparent;
@@ -185,6 +221,10 @@ export default {
                 position: fixed;
                 width: 100%;
                 z-index: 1;
+
+                @media screen and (min-width: 1280px) {
+                    display: none;
+                }
             }
         }
 
@@ -200,6 +240,10 @@ export default {
             .dropdown_list_wrapper {
                 opacity: 1;
                 pointer-events: auto;
+
+                @media screen and (min-width: 1280px) {
+                    max-height: 400px;
+                }
             }
         }
 

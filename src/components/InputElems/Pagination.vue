@@ -8,7 +8,7 @@
             @optionChanged="(option) => handlePerPageChange(option)"
         />
         <div class="pagination_buttons">
-            <div class="buttons_single prev" @click="handleArrowClick('down')">
+            <div class="buttons_single prev" :class="{'disabled': currentPage===1}" @click="handleArrowClick('down')">
                 <ArrowHeadIcon />
             </div>
             <div v-for="page in paginationArrayCp" :key="page" @click="handleCurrentPageChange(page)" class="buttons_single" :class="{'current': Number(page)===currentPage}">
@@ -16,7 +16,7 @@
                     {{page}}
                 </span>
             </div>
-            <div class="buttons_single next" @click="handleArrowClick('up')">
+            <div class="buttons_single next" :class="{'disabled': currentPage===pageAmountCp}"  @click="handleArrowClick('up')">
                 <ArrowHeadIcon />
             </div>
         </div>
@@ -156,6 +156,17 @@ export default {
                     background-color:v-bind('displayColorGetter("gray400")');
                     border: 1px solid v-bind('displayColorGetter("gray400")');
                     pointer-events: none;
+
+                    span {
+                        color: #000000;
+                    }
+                }
+
+                &:hover {
+                    @media screen and (min-width: 1280px) {
+                        background-color:v-bind('displayColorGetter("gray100")');
+                        border: 1px solid v-bind('displayColorGetter("gray100")');
+                    }
                 }
             }
         }

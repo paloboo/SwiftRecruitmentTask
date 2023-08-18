@@ -19,6 +19,10 @@ export default defineStore('mainStore', {
                 light: '#0060EF',
                 dark: '#4D94FF',
             },
+            gray100: {
+                light: '#fafafa',
+                dark: '#565656',
+            },
             gray200: {
                 light: '#EDEDED',
                 dark: '#303030',

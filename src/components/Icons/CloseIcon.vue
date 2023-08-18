@@ -11,6 +11,11 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style lang="scss" scoped>
+svg {
+    path,
+    circle{
+        stroke: v-bind("displayColorGetter('neutral900')");
+        transition: stroke .3s ease-in-out;
+    }
+}</style>
