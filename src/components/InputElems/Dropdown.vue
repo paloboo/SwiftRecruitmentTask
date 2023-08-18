@@ -171,7 +171,7 @@ export default {
         position: fixed;
         right: 0;
         top: 0;
-        transition: opacity .3s ease-in-out;
+        //transition: opacity .3s ease-in-out;
         width: 100vw;
 
         @media screen and (min-width: 1280px) {
@@ -197,6 +197,10 @@ export default {
             transition: background-color .3s ease-in-out;
             width: calc(100% - 32px);
             z-index: 2;
+
+            @media screen and (min-width: 768px) {
+                max-width: 560px;
+            }
 
             @media screen and (min-width: 1280px) {
                 border: 1px solid v-bind('displayColorGetter("blue500")');

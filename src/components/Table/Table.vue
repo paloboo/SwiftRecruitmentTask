@@ -15,7 +15,7 @@
                     @optionChanged="(option) => sort(option)"
                     isTranslated/>
                 <div class="sort_by_btn" :class="{'rotated': sortingAsc}">
-                    <Btn @click="sort(sortedBy)">
+                    <Btn @click="sort(sortedBy)" type="edit">
                         <ArrowIcon/>
                     </Btn>
                 </div>
