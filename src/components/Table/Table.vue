@@ -1,5 +1,5 @@
 <template>
-    <div class="table">
+    <div class="table" >
         <div class="table_title">
             <div class="title_btn_wrapper">
                 <h1>{{ $translations[currentLanguageCp]['employee_list'] }}</h1>
@@ -40,6 +40,12 @@
             />
             <Pagination :totalAmount="allEmployees.length" @rangeChanged="handlePaginationRangeChange"/>
         </template>
+        <PopupRemoveConfirm
+            v-if="popups.remove"
+            :chosenEmployee="selectedRow"
+            @confirm="removeConfirmed"
+            @close="handlePopupClose('remove')"
+        />
     </div>
 </template>
 
@@ -48,12 +54,14 @@ import ArrowIcon from "../Icons/ArrowIcon.vue";
 import Btn from "../InputElems/Btn.vue";
 import Dropdown from "../InputElems/Dropdown.vue";
 import Pagination from "../InputElems/Pagination.vue";
+import PopupRemoveConfirm from "../Popups/PopupRemoveConfirm.vue";
 import TableHeading from "./TableHeading.vue";
 import TableRow from "./TableRow.vue";
 
 export default {
     name: "Table",
     components: {
+        PopupRemoveConfirm,
         ArrowIcon,
         Dropdown,
         Btn,
@@ -68,6 +76,12 @@ export default {
                 from: 0,
                 to: 10,
             },
+            popups: {
+                add: false,
+                edit: false,
+                remove: false,
+            },
+            selectedRow: {},
             sortedBy: 'id',
             sortingAsc: true,
         }
@@ -80,9 +94,43 @@ export default {
         handlePaginationRangeChange(range) {
             this.paginationRange = {...range}
         },
+        handlePopupClose(type) {
+            this.popups[type] = false;
+            this.selectedRow = {};
+        },
         handleRemoveButtonClicked(selectedRow) {
+            this.popups.remove = true;
+            this.selectedRow = selectedRow;
             console.log('edit')
             console.log(selectedRow)
+        },
+        removeConfirmed() {
+            console.log('asd')
+            if (!this.requestLock) {
+                this.requestLock = true;
+                fetch(`http://localhost:3000/employees/${this.selectedRow.id}`, {
+                    method: 'DELETE', // Ustawienie metody na DELETE
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Pracownik został usunięty.'); //TODO podmienic na snackbar
+                        this.allEmployees = this.allEmployees.filter(item => item.id!==this.selectedRow.id)
+                        this.selectedRow = {};
+                        this.popups.remove = false;
+                    } else {
+                        throw new Error('Wystąpił problem podczas usuwania pracownika.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Wystąpił błąd:', error);
+                })
+                .finally(() => {
+                    this.requestLock = false;
+                });
+            }
         },
         sort(column) {
             if (column === this.sortedBy) {
@@ -96,7 +144,7 @@ export default {
             } else {
                 this.allEmployees = this.allEmployees.sort((a, b) => a[this.sortedBy] > b[this.sortedBy] ? -1 : 1);
             }
-        }
+        },
         //     fetch('http://localhost:3000/employees/1', {
         //         method: 'PUT',
         //         headers: {

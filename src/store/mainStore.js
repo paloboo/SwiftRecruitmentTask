@@ -106,6 +106,7 @@ export default defineStore('mainStore', {
         },
         displayMode: 'light',
         language: 'pl',
+        requestLock: false,
     }),
     getters: {
         displayColorGetter: (state) => {

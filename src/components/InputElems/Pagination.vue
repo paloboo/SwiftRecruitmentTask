@@ -101,7 +101,7 @@ export default {
     },
     computed: {
         pageAmountCp() {
-            return  Math.floor(this.totalAmount/this.perPage)
+            return  Math.ceil(this.totalAmount/this.perPage)
         },
         paginationArrayCp() {
             return this.generatePagination(this.currentPage, this.pageAmountCp)
