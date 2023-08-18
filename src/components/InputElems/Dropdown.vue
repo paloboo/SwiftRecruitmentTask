@@ -5,7 +5,7 @@
                 <span>{{dropdownDesc}}</span>
             </div>
             <div class="chosen_option_value">
-                <span>{{chosenOption}}</span>
+                <span>{{isTranslated ? $translations[language][chosenOption]: chosenOption}}</span>
                 <div class="option_arrow_head">
                     <ArrowHeadIcon />
                 </div>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="content_wrapper">
                     <div class="content_single" :class="{'current': option === chosenOption}" v-for="option in options" :key="option" @click="handleOptionClicked(option)">
-                        <p>{{option}}</p>
+                        <span>{{isTranslated ? $translations[language][option] :option}}</span>
                     </div>
                 </div>
             </div>
@@ -46,6 +46,14 @@ export default {
             type: String,
             default: ''
         },
+        isTranslated: {
+            type: Boolean,
+            default: false
+        },
+        isSmall: {
+            type: Boolean,
+            default: false
+        },
         options: {
             type: Array,
             default() {
@@ -54,10 +62,6 @@ export default {
                 ]
             }
         },
-        isSmall: {
-            type: Boolean,
-            default: false
-        }
     },
     data() {
         return {
@@ -98,12 +102,14 @@ export default {
                 display: flex;
                 height: 40px;
                 justify-content: space-between;
+                max-width: 328px;
                 padding: 8px;
-                width: 328px;
+                width: 100%;
 
                 span {
                     font-size: 16px;
                     line-height: 24px;
+                    text-transform: capitalize;
                 }
             }
 
@@ -195,6 +201,10 @@ export default {
                         padding: 8px 12px;
                         transition: background-color .3s ease-in-out;
 
+                        span {
+                            text-transform: capitalize;
+                        }
+
                         &:hover {
                             @media screen and (min-width: 1280px) {
                                 background-color: v-bind('displayColorGetter("gray100")');
@@ -206,6 +216,7 @@ export default {
                             border-bottom: 1px solid transparent;
                             background-color: v-bind('displayColorGetter("gray200")');
                             border-radius: 8px;
+                            pointer-events: none;
                         }
 
                         &:last-of-type {

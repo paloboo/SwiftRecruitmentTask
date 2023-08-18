@@ -11,7 +11,8 @@
     "id": "id",
     "last_name": "surname",
     "remove": "remove",
-    "results_per_page": "results per page"
+    "results_per_page": "results per page",
+    "sort": "sort by"
   },
   "pl": {
     "add_employee": "dodaj pracownika",
@@ -25,6 +26,7 @@
     "id": "id",
     "last_name": "nazwisko",
     "remove": "usuń",
-    "results_per_page": "wyników na stronę"
+    "results_per_page": "wyników na stronę",
+    "sort": "sortuj"
   }
 }
