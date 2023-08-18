@@ -1,28 +1,40 @@
 # recruitment-task
 
-This template should help get you started developing with Vue 3 in Vite.
+dane do JSONa zostały wygenerowane za pomocą https://www.mockaroo.com/.
 
-## Recommended IDE Setup
+wersja node użyta podczas tworzenia aplikacji
+v20.5.1
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### Instalacja aplikacji lokalnie
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Instalacja globalnie json-servera
+
+```sh
+npm install -g json-server
+```
+
+
+### Uruchomienie json-servera
+
+```sh
+json-server --watch db.json
+```
+
+
+
+
+### Kompilacja i hot-reload podczas programowania
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Kompilacja i minifikacja dla produkcji
 
 ```sh
 npm run build

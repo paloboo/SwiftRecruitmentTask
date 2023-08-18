@@ -1,47 +1,67 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div>
+        <div>
+            <div v-for="employee in allEmployees">
+                <p>{{employee}}</p>
+            </div>
+        </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+export default {
+    name: "App",
+    data() {
+        return {
+            allEmployees: [],
+        }
+    },
+    methods: {
+        remove() {
+
+        },
+        update() {
+            fetch('http://localhost:3000/employees/1', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    "first_name": "Marya",
+                    "last_name": "Jatczak",
+                    "email": "mjatczak0@yolasite.com",
+                    "gender": "Genderfluid",
+                    "earnings": 21121.64,
+                    "experience": 2
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Zaktualizowano pracownika:', data);
+                })
+                .catch(error => {
+                    console.error('Wystąpił błąd:', error);
+                });
+        }
+    },
+    created() {
+        fetch('http://localhost:3000/employees')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                this.allEmployees = data;
+            })
+            .catch(error => {
+                console.error('Wystąpił błąd:', error);
+            });
+    }
 }
+</script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+<style scoped lang="scss">
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
