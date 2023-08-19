@@ -87,8 +87,10 @@ export default {
                     width: 20px;
 
                     .circle_fill {
+                        background-color: transparent;
                         border-radius: 50%;
                         height: 12px;
+                        transition: background-color .3s ease-in-out;
                         width: 12px;
 
                         &.active {
