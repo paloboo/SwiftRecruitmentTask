@@ -61,19 +61,28 @@ export default {
         border: 1px solid v-bind('displayColorGetter("gray600")');
         border-radius: 4px;
         max-width: 328px;
-        padding: 4px 8px;
+        padding: 9px 8px;
+        position: relative;
+        width: calc(100% - 32px);
 
         .list_title {
+            background-color: v-bind('displayColorGetter("neutral0")');
+            left: 0;
+            padding: 0 4px;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            transform: translateY(-50%) scale(0.75);
+
             span {
                 color: v-bind('displayColorGetter("neutral900")');
-                font-size: 12px;
-                line-height: 18px;
+                opacity: 1;
             }
         }
+
         .list_wrapper {
             display: flex;
             gap: 24px;
-            margin-top: 12px;
 
             .list_option {
                 align-items: center;
