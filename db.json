@@ -2,12 +2,12 @@
   "employees": [
     {
       "id": 1,
-      "first_name": "Marya",
-      "last_name": "Jatczak",
-      "email": "mjatczak0@yolasite.com",
-      "gender": "Genderfluid",
-      "earnings": 21121.64,
-      "experience": 2
+      "first_name": "Charles",
+      "last_name": "Rontsch",
+      "email": "crontsch1@nasa.gov",
+      "gender": "Male",
+      "earnings": 29814.15,
+      "experience": 25
     },
     {
       "id": 2,
@@ -32,7 +32,7 @@
       "first_name": "Kesley",
       "last_name": "Yerrill",
       "email": "kyerrill3@netscape.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 18394.24,
       "experience": 3
     },
@@ -41,7 +41,7 @@
       "first_name": "Karyl",
       "last_name": "Goering",
       "email": "kgoering4@sciencedirect.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 24644.97,
       "experience": 14
     },
@@ -50,7 +50,7 @@
       "first_name": "Lizzie",
       "last_name": "Giacopelo",
       "email": "lgiacopelo5@com.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 34354.97,
       "experience": 22
     },
@@ -104,7 +104,7 @@
       "first_name": "Elenore",
       "last_name": "Hamelyn",
       "email": "ehamelynb@tripadvisor.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 17051.92,
       "experience": 29
     },
@@ -212,7 +212,7 @@
       "first_name": "Laraine",
       "last_name": "Chatelot",
       "email": "lchatelotn@angelfire.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 18418.62,
       "experience": 18
     },
@@ -257,7 +257,7 @@
       "first_name": "Windy",
       "last_name": "Klishin",
       "email": "wklishins@yahoo.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 21707.57,
       "experience": 23
     },
@@ -392,7 +392,7 @@
       "first_name": "Shayne",
       "last_name": "Millward",
       "email": "smillward17@xrea.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 2172.96,
       "experience": 3
     },
@@ -428,7 +428,7 @@
       "first_name": "Had",
       "last_name": "Coker",
       "email": "hcoker1b@unblog.fr",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 26540.17,
       "experience": 1
     },
@@ -482,7 +482,7 @@
       "first_name": "Tanya",
       "last_name": "Cluet",
       "email": "tcluet1h@latimes.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 33074.54,
       "experience": 30
     },
@@ -635,7 +635,7 @@
       "first_name": "Loni",
       "last_name": "Ebbin",
       "email": "lebbin1y@delicious.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 31697.1,
       "experience": 14
     },
@@ -725,7 +725,7 @@
       "first_name": "Krishna",
       "last_name": "de Lloyd",
       "email": "kdelloyd28@washington.edu",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 4455.45,
       "experience": 8
     },
@@ -851,7 +851,7 @@
       "first_name": "Lolly",
       "last_name": "Hewins",
       "email": "lhewins2m@psu.edu",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 32486.37,
       "experience": 22
     },
@@ -896,7 +896,7 @@
       "first_name": "Suzann",
       "last_name": "Verry",
       "email": "sverry2r@abc.net.au",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 34305.74,
       "experience": 0
     },
@@ -1031,7 +1031,7 @@
       "first_name": "Adina",
       "last_name": "Kinton",
       "email": "akinton36@parallels.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 6641.59,
       "experience": 26
     },
@@ -1211,7 +1211,7 @@
       "first_name": "Fara",
       "last_name": "Janosevic",
       "email": "fjanosevic3q@tinyurl.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 30645.44,
       "experience": 0
     },
@@ -1328,7 +1328,7 @@
       "first_name": "Mic",
       "last_name": "Chasmar",
       "email": "mchasmar43@soundcloud.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 248.65,
       "experience": 18
     },
@@ -1517,7 +1517,7 @@
       "first_name": "Mar",
       "last_name": "Camerello",
       "email": "mcamerello4o@opera.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 26263.66,
       "experience": 30
     },
@@ -1589,7 +1589,7 @@
       "first_name": "Flora",
       "last_name": "Da Costa",
       "email": "fdacosta4w@meetup.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 10048.98,
       "experience": 28
     },
@@ -1823,7 +1823,7 @@
       "first_name": "Wynny",
       "last_name": "Lathey",
       "email": "wlathey5m@mlb.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 5115.57,
       "experience": 28
     },
@@ -1850,7 +1850,7 @@
       "first_name": "Lynnett",
       "last_name": "Leijs",
       "email": "lleijs5p@t.co",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 2191.49,
       "experience": 30
     },
@@ -1913,7 +1913,7 @@
       "first_name": "Andrus",
       "last_name": "Wharton",
       "email": "awharton5w@cnet.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 17514.23,
       "experience": 11
     },
@@ -1931,7 +1931,7 @@
       "first_name": "Jessi",
       "last_name": "Blitz",
       "email": "jblitz5y@hostgator.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 27577.1,
       "experience": 1
     },
@@ -1967,7 +1967,7 @@
       "first_name": "Del",
       "last_name": "Suffield",
       "email": "dsuffield62@naver.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 36158.53,
       "experience": 10
     },
@@ -2102,7 +2102,7 @@
       "first_name": "Stevie",
       "last_name": "Hatherley",
       "email": "shatherley6h@privacy.gov.au",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 16457.27,
       "experience": 20
     },
@@ -2120,7 +2120,7 @@
       "first_name": "Finn",
       "last_name": "Dedden",
       "email": "fdedden6j@prnewswire.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 14845.58,
       "experience": 16
     },
@@ -2138,7 +2138,7 @@
       "first_name": "Leonard",
       "last_name": "Henri",
       "email": "lhenri6l@wikia.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 29565.63,
       "experience": 4
     },
@@ -2147,7 +2147,7 @@
       "first_name": "Lowrance",
       "last_name": "Brobyn",
       "email": "lbrobyn6m@netlog.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 36749.16,
       "experience": 21
     },
@@ -2219,7 +2219,7 @@
       "first_name": "Cilka",
       "last_name": "Stringfellow",
       "email": "cstringfellow6u@wikipedia.org",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 16331.57,
       "experience": 15
     },
@@ -2462,7 +2462,7 @@
       "first_name": "Rodney",
       "last_name": "Thomason",
       "email": "rthomason7l@last.fm",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 39362.54,
       "experience": 20
     },
@@ -2597,7 +2597,7 @@
       "first_name": "Ezra",
       "last_name": "Revance",
       "email": "erevance80@gizmodo.com",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 8857.71,
       "experience": 22
     },
@@ -2795,7 +2795,7 @@
       "first_name": "Alexis",
       "last_name": "Vaadeland",
       "email": "avaadeland8m@aboutads.info",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 31831.58,
       "experience": 20
     },
@@ -2840,7 +2840,7 @@
       "first_name": "Fancie",
       "last_name": "Smiths",
       "email": "fsmiths8r@nih.gov",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 22798.14,
       "experience": 1
     },
@@ -2867,7 +2867,7 @@
       "first_name": "Felic",
       "last_name": "Sprott",
       "email": "fsprott8u@ucoz.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 17723.96,
       "experience": 1
     },
@@ -2876,7 +2876,7 @@
       "first_name": "Faustina",
       "last_name": "Dunsford",
       "email": "fdunsford8v@vistaprint.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 2284.86,
       "experience": 29
     },
@@ -2948,7 +2948,7 @@
       "first_name": "Jud",
       "last_name": "McNeely",
       "email": "jmcneely93@dion.ne.jp",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 6663.63,
       "experience": 2
     },
@@ -2993,7 +2993,7 @@
       "first_name": "Cristobal",
       "last_name": "Blundon",
       "email": "cblundon98@home.pl",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 28859.2,
       "experience": 5
     },
@@ -3029,7 +3029,7 @@
       "first_name": "Gardener",
       "last_name": "Killingsworth",
       "email": "gkillingsworth9c@ca.gov",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 7057.72,
       "experience": 29
     },
@@ -3092,7 +3092,7 @@
       "first_name": "Pollyanna",
       "last_name": "Freiburger",
       "email": "pfreiburger9j@oaic.gov.au",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 33522.27,
       "experience": 1
     },
@@ -3110,7 +3110,7 @@
       "first_name": "Andre",
       "last_name": "Rewcastle",
       "email": "arewcastle9l@tinyurl.com",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 39624.55,
       "experience": 21
     },
@@ -3182,7 +3182,7 @@
       "first_name": "Kris",
       "last_name": "Rudgley",
       "email": "krudgley9t@wikipedia.org",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 8850.47,
       "experience": 19
     },
@@ -3236,7 +3236,7 @@
       "first_name": "Farica",
       "last_name": "Deary",
       "email": "fdeary9z@webs.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 2698.49,
       "experience": 16
     },
@@ -3263,7 +3263,7 @@
       "first_name": "Cathryn",
       "last_name": "Arni",
       "email": "carnia2@slashdot.org",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 38137.73,
       "experience": 17
     },
@@ -3461,7 +3461,7 @@
       "first_name": "Sergio",
       "last_name": "Bolland",
       "email": "sbollandao@fotki.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 19828.18,
       "experience": 6
     },
@@ -3479,7 +3479,7 @@
       "first_name": "Osgood",
       "last_name": "Orniz",
       "email": "oornizaq@360.cn",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 12247.85,
       "experience": 21
     },
@@ -3578,7 +3578,7 @@
       "first_name": "Cindie",
       "last_name": "Giovannardi",
       "email": "cgiovannardib1@bravesites.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 31346.96,
       "experience": 19
     },
@@ -3659,7 +3659,7 @@
       "first_name": "Caril",
       "last_name": "Muspratt",
       "email": "cmusprattba@blogtalkradio.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 372.89,
       "experience": 17
     },
@@ -3821,7 +3821,7 @@
       "first_name": "Noby",
       "last_name": "Boulds",
       "email": "nbouldsbs@live.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 38232.93,
       "experience": 6
     },
@@ -3884,7 +3884,7 @@
       "first_name": "Arv",
       "last_name": "Pietroni",
       "email": "apietronibz@myspace.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 28195.55,
       "experience": 27
     },
@@ -3893,7 +3893,7 @@
       "first_name": "Ahmad",
       "last_name": "Antonomoli",
       "email": "aantonomolic0@pcworld.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 14580.32,
       "experience": 5
     },
@@ -3902,7 +3902,7 @@
       "first_name": "Creigh",
       "last_name": "Cosbey",
       "email": "ccosbeyc1@ezinearticles.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 15092.65,
       "experience": 17
     },
@@ -4487,7 +4487,7 @@
       "first_name": "Sianna",
       "last_name": "Oosthout de Vree",
       "email": "soosthoutdevreedu@mozilla.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 34535.67,
       "experience": 20
     },
@@ -4577,7 +4577,7 @@
       "first_name": "Nobie",
       "last_name": "Manntschke",
       "email": "nmanntschkee4@house.gov",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 7009.39,
       "experience": 21
     },
@@ -4676,7 +4676,7 @@
       "first_name": "Monika",
       "last_name": "Brouncker",
       "email": "mbrounckeref@cisco.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 4913.82,
       "experience": 20
     },
@@ -4694,7 +4694,7 @@
       "first_name": "Wang",
       "last_name": "Collman",
       "email": "wcollmaneh@tamu.edu",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 20942.49,
       "experience": 30
     },
@@ -4739,7 +4739,7 @@
       "first_name": "Averell",
       "last_name": "Lacheze",
       "email": "alachezeem@wisc.edu",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 34841.04,
       "experience": 28
     },
@@ -4766,7 +4766,7 @@
       "first_name": "Rabbi",
       "last_name": "Cases",
       "email": "rcasesep@europa.eu",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 24570.91,
       "experience": 19
     },
@@ -4820,7 +4820,7 @@
       "first_name": "Pincus",
       "last_name": "Capstake",
       "email": "pcapstakeev@cargocollective.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 25720.04,
       "experience": 9
     },
@@ -4892,7 +4892,7 @@
       "first_name": "Miguel",
       "last_name": "Shoveller",
       "email": "mshovellerf3@noaa.gov",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 23717.82,
       "experience": 5
     },
@@ -5081,7 +5081,7 @@
       "first_name": "Jesus",
       "last_name": "Faber",
       "email": "jfaberfo@yellowpages.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 15435.27,
       "experience": 16
     },
@@ -5144,7 +5144,7 @@
       "first_name": "Hynda",
       "last_name": "Wheadon",
       "email": "hwheadonfv@squarespace.com",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 31161.92,
       "experience": 21
     },
@@ -5378,7 +5378,7 @@
       "first_name": "Gerda",
       "last_name": "Jarlmann",
       "email": "gjarlmanngl@geocities.jp",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 21502.48,
       "experience": 3
     },
@@ -5450,7 +5450,7 @@
       "first_name": "Nyssa",
       "last_name": "Nowaczyk",
       "email": "nnowaczykgt@independent.co.uk",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 32596.4,
       "experience": 0
     },
@@ -5576,7 +5576,7 @@
       "first_name": "Viola",
       "last_name": "Shallcrass",
       "email": "vshallcrassh7@xing.com",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 33260.29,
       "experience": 6
     },
@@ -5819,7 +5819,7 @@
       "first_name": "Manny",
       "last_name": "Sitford",
       "email": "msitfordhy@craigslist.org",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 9566.35,
       "experience": 16
     },
@@ -5837,7 +5837,7 @@
       "first_name": "Lorenzo",
       "last_name": "Qualtrough",
       "email": "lqualtroughi0@disqus.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 23243.51,
       "experience": 19
     },
@@ -5990,7 +5990,7 @@
       "first_name": "Marys",
       "last_name": "Georg",
       "email": "mgeorgih@mail.ru",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 29761.15,
       "experience": 3
     },
@@ -6107,7 +6107,7 @@
       "first_name": "Anthia",
       "last_name": "Sterland",
       "email": "asterlandiu@blogger.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 1763.55,
       "experience": 22
     },
@@ -6116,7 +6116,7 @@
       "first_name": "Konstance",
       "last_name": "Deppen",
       "email": "kdeppeniv@twitpic.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 22962.8,
       "experience": 21
     },
@@ -6188,7 +6188,7 @@
       "first_name": "Brod",
       "last_name": "Aggs",
       "email": "baggsj3@wsj.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 31652.87,
       "experience": 4
     },
@@ -6332,7 +6332,7 @@
       "first_name": "Scot",
       "last_name": "Shorto",
       "email": "sshortojj@wikipedia.org",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 30513.94,
       "experience": 4
     },
@@ -6386,7 +6386,7 @@
       "first_name": "Rosanna",
       "last_name": "Cobby",
       "email": "rcobbyjp@utexas.edu",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 5148.21,
       "experience": 6
     },
@@ -6422,7 +6422,7 @@
       "first_name": "Laurent",
       "last_name": "Walster",
       "email": "lwalsterjt@mozilla.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 16456.31,
       "experience": 20
     },
@@ -6521,7 +6521,7 @@
       "first_name": "Clementina",
       "last_name": "Hubberstey",
       "email": "chubbersteyk4@tiny.cc",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 39273.83,
       "experience": 2
     },
@@ -6620,7 +6620,7 @@
       "first_name": "Flory",
       "last_name": "Syme",
       "email": "fsymekf@google.cn",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 33446.9,
       "experience": 25
     },
@@ -6764,7 +6764,7 @@
       "first_name": "Georgie",
       "last_name": "MacKaig",
       "email": "gmackaigkv@dailymotion.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 5972.45,
       "experience": 4
     },
@@ -6863,7 +6863,7 @@
       "first_name": "Chrissie",
       "last_name": "Pocknoll",
       "email": "cpocknolll6@washingtonpost.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 17550.59,
       "experience": 25
     },
@@ -6926,7 +6926,7 @@
       "first_name": "Sanders",
       "last_name": "Shepheard",
       "email": "sshepheardld@google.com.au",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 29432.6,
       "experience": 24
     },
@@ -7025,7 +7025,7 @@
       "first_name": "Archibald",
       "last_name": "Berrow",
       "email": "aberrowlo@woothemes.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 8587.86,
       "experience": 16
     },
@@ -7070,7 +7070,7 @@
       "first_name": "Torry",
       "last_name": "Madsen",
       "email": "tmadsenlt@bandcamp.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 2686.32,
       "experience": 15
     },
@@ -7205,7 +7205,7 @@
       "first_name": "Deane",
       "last_name": "Morsom",
       "email": "dmorsomm8@miibeian.gov.cn",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 6591.15,
       "experience": 17
     },
@@ -7340,7 +7340,7 @@
       "first_name": "Maddi",
       "last_name": "Leere",
       "email": "mleeremn@freewebs.com",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 4628.55,
       "experience": 18
     },
@@ -7376,7 +7376,7 @@
       "first_name": "Ferdinand",
       "last_name": "Dachey",
       "email": "fdacheymr@posterous.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 16674.75,
       "experience": 24
     },
@@ -7394,7 +7394,7 @@
       "first_name": "Cirilo",
       "last_name": "Itzhak",
       "email": "citzhakmt@joomla.org",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 24447.22,
       "experience": 22
     },
@@ -7403,7 +7403,7 @@
       "first_name": "Clio",
       "last_name": "Hatje",
       "email": "chatjemu@de.vu",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 10225.29,
       "experience": 8
     },
@@ -7430,7 +7430,7 @@
       "first_name": "Benedick",
       "last_name": "Karlsen",
       "email": "bkarlsenmx@joomla.org",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 11004.52,
       "experience": 9
     },
@@ -7457,7 +7457,7 @@
       "first_name": "Vinny",
       "last_name": "Mousdall",
       "email": "vmousdalln0@sourceforge.net",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 15514.15,
       "experience": 28
     },
@@ -7466,7 +7466,7 @@
       "first_name": "Amata",
       "last_name": "Hizir",
       "email": "ahizirn1@uiuc.edu",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 22363.88,
       "experience": 4
     },
@@ -7538,7 +7538,7 @@
       "first_name": "Trevar",
       "last_name": "Heaselgrave",
       "email": "theaselgraven9@canalblog.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 7905.73,
       "experience": 1
     },
@@ -7565,7 +7565,7 @@
       "first_name": "Bernardina",
       "last_name": "Gehrts",
       "email": "bgehrtsnc@omniture.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 8587.57,
       "experience": 20
     },
@@ -7610,7 +7610,7 @@
       "first_name": "Alfonso",
       "last_name": "Pessler",
       "email": "apesslernh@walmart.com",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 12044.24,
       "experience": 21
     },
@@ -7664,7 +7664,7 @@
       "first_name": "Rory",
       "last_name": "Covey",
       "email": "rcoveynn@amazon.co.uk",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 21767.31,
       "experience": 12
     },
@@ -7691,7 +7691,7 @@
       "first_name": "Tilly",
       "last_name": "Roth",
       "email": "trothnq@cdc.gov",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 39195.95,
       "experience": 18
     },
@@ -7763,7 +7763,7 @@
       "first_name": "Waly",
       "last_name": "Darree",
       "email": "wdarreeny@paginegialle.it",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 3799.59,
       "experience": 7
     },
@@ -7853,7 +7853,7 @@
       "first_name": "Lonni",
       "last_name": "Frankiewicz",
       "email": "lfrankiewiczo8@prnewswire.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 23295.72,
       "experience": 6
     },
@@ -7970,7 +7970,7 @@
       "first_name": "Svend",
       "last_name": "Milmith",
       "email": "smilmithol@imageshack.us",
-      "gender": "Agender",
+      "gender": "Male",
       "earnings": 31407.97,
       "experience": 16
     },
@@ -7988,7 +7988,7 @@
       "first_name": "Ericha",
       "last_name": "Bouttell",
       "email": "ebouttellon@arizona.edu",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 11953.95,
       "experience": 12
     },
@@ -7997,7 +7997,7 @@
       "first_name": "Jocelyne",
       "last_name": "Mowles",
       "email": "jmowlesoo@mtv.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 3740.54,
       "experience": 1
     },
@@ -8006,7 +8006,7 @@
       "first_name": "Zelig",
       "last_name": "Easbie",
       "email": "zeasbieop@ebay.com",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 18558.4,
       "experience": 0
     },
@@ -8096,7 +8096,7 @@
       "first_name": "Lyn",
       "last_name": "Siveyer",
       "email": "lsiveyeroz@multiply.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 12011.93,
       "experience": 26
     },
@@ -8177,7 +8177,7 @@
       "first_name": "Lynette",
       "last_name": "Sissens",
       "email": "lsissensp8@nydailynews.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 10010.21,
       "experience": 25
     },
@@ -8204,7 +8204,7 @@
       "first_name": "Alyse",
       "last_name": "Graysmark",
       "email": "agraysmarkpb@cbslocal.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 14390.19,
       "experience": 6
     },
@@ -8213,7 +8213,7 @@
       "first_name": "Berta",
       "last_name": "Rolling",
       "email": "brollingpc@chronoengine.com",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 9069.8,
       "experience": 2
     },
@@ -8303,7 +8303,7 @@
       "first_name": "Engracia",
       "last_name": "Childrens",
       "email": "echildrenspm@tripadvisor.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 37267.49,
       "experience": 26
     },
@@ -8357,7 +8357,7 @@
       "first_name": "Lucia",
       "last_name": "Sowood",
       "email": "lsowoodps@clickbank.net",
-      "gender": "Genderqueer",
+      "gender": "Female",
       "earnings": 27646.31,
       "experience": 13
     },
@@ -8573,7 +8573,7 @@
       "first_name": "Winslow",
       "last_name": "Petley",
       "email": "wpetleyqg@weibo.com",
-      "gender": "Non-binary",
+      "gender": "Female",
       "earnings": 4810.24,
       "experience": 6
     },
@@ -8672,7 +8672,7 @@
       "first_name": "Benedetto",
       "last_name": "Mulcock",
       "email": "bmulcockqr@wunderground.com",
-      "gender": "Genderfluid",
+      "gender": "Female",
       "earnings": 30397.58,
       "experience": 11
     },
@@ -8717,7 +8717,7 @@
       "first_name": "Nadiya",
       "last_name": "Hackelton",
       "email": "nhackeltonqw@usa.gov",
-      "gender": "Polygender",
+      "gender": "Female",
       "earnings": 3088.29,
       "experience": 25
     },
@@ -8996,36 +8996,9 @@
       "first_name": "Alethea",
       "last_name": "Lismer",
       "email": "alismerrr@google.co.uk",
-      "gender": "Bigender",
+      "gender": "Male",
       "earnings": 29728.76,
       "experience": 4
-    },
-    {
-      "first_name": "Marya",
-      "last_name": "Jatczak",
-      "email": "mjatczak0@yolasite.com",
-      "gender": "Genderfluid",
-      "earnings": 21121.64,
-      "experience": 2,
-      "id": 1001
-    },
-    {
-      "first_name": "Marya",
-      "last_name": "Jatczak",
-      "email": "mjatczak0@yolasite.com",
-      "gender": "Genderfluid",
-      "earnings": 21121.64,
-      "experience": 2,
-      "id": 1002
-    },
-    {
-      "first_name": "Marya",
-      "last_name": "Jatczak",
-      "email": "mjatczak0@yolasite.com",
-      "gender": "Genderfluid",
-      "earnings": 21121.64,
-      "experience": 2,
-      "id": 1003
     }
   ]
 }

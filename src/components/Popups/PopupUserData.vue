@@ -47,68 +47,99 @@ export default {
     },
     methods: {
         handleConfirmButtonClicked() {
-            this.validateForm();
-            if (this.isEdit) {
-                //     fetch('http://localhost:3000/employees/1', {
-                //         method: 'PUT',
-                //         headers: {
-                //             'Content-Type': 'application/json',
-                //         },
-                //         body: JSON.stringify({
-                //             "id": "0",
-                //             "first_name": "Marya",
-                //             "last_name": "Jatczak",
-                //             "email": "mjatczak0@yolasite.com",
-                //             "gender": "Genderfluid",
-                //             "earnings": 21121.64,
-                //             "experience": 2,
-                //         }),
-                //     })
-                //         .then(response => response.json())
-                //         .then(data => {
-                //             console.log('Zaktualizowano pracownika:', data);
-                //         })
-                //         .catch(error => {
-                //             console.error('Wystąpił błąd:', error);
-                //         });
-                //
-                // }
-            } else {
-                // fetch('http://localhost:3000/employees', {
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type': 'application/json',
-                //     },
-                //     body: JSON.stringify({
-                //         "first_name": "Marya",
-                //         "last_name": "Jatczak",
-                //         "email": "mjatczak0@yolasite.com",
-                //         "gender": "Genderfluid",
-                //         "earnings": 21121.64,
-                //         "experience": 2,
-                //     }),
-                // })
-                //     .then(response => response.json())
-                //     .then(data => {
-                //         console.log('Dodano nowego pracownika:', data);
-                //     })
-                //     .catch(error => {
-                //         console.error('Wystąpił błąd:', error);
-                //     });
+            this.errors = {};
+            if (!this.validateForm()) {
+                this.requestLock = true;
+                if (this.isEdit) {
+                    fetch('http://localhost:3000/employees/1', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            "id": this.currentUserData.id,
+                            "first_name": this.currentUserData.first_name,
+                            "last_name": this.currentUserData.last_name,
+                            "email": this.currentUserData.email,
+                            "gender": this.currentUserData.gender,
+                            "earnings": Number(this.currentUserData.earnings),
+                            "experience": Number(this.currentUserData.experience),
+                        }),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Zaktualizowano pracownika:', data);
+                            this.$emit('updated', data);
+                        })
+                        .catch(error => {
+                            console.error('Wystąpił błąd:', error);
+                        })
+                        .finally(() => {
+                            this.requestLock = false;
+                        });
+                } else {
+                    fetch('http://localhost:3000/employees', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            "first_name": this.currentUserData.first_name,
+                            "last_name": this.currentUserData.last_name,
+                            "email": this.currentUserData.email,
+                            "gender": this.currentUserData.gender,
+                            "earnings": Number(this.currentUserData.earnings),
+                            "experience": Number(this.currentUserData.experience),
+                        }),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Dodano nowego pracownika:', data);
+                            this.$emit('added', data);
+                        })
+                        .catch(error => {
+                            console.error('Wystąpił błąd:', error);
+                        }).finally(() => {
+                        this.requestLock = false;
+                    });
+                }
             }
         },
         validateForm() {
             Object.keys(this.currentUserData).forEach(item => {
                 if (this.currentUserData[item] === '') {
                     this.errors[item] = 'nie moze byc puste';
+                } else {
+                    if (item === 'email') {
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailPattern.test(this.currentUserData[item])) {
+                            this.errors[item] = this.$translations[this.language]['incorrect_mail_format'];
+                        }
+                    }
+
+                    if (item === 'earnings') {
+                        const numberPattern = /^\d+(\.\d{1,2})?$/;
+                        this.currentUserData[item] = this.currentUserData[item].toString().replaceAll(',', '.');
+                        if (!numberPattern.test(this.currentUserData[item])) {
+                            this.errors[item] = this.$translations[this.language]['incorrect_price_format'];
+                        }
+                    }
+
+                    if (item === 'experience') {
+                        const positiveIntegerPattern = /^(?:0|[1-9]\d*)$/;
+
+                        if (!positiveIntegerPattern.test(this.currentUserData[item])) {
+                            this.errors[item] = this.$translations[this.language]['the_value_should_be_an_integer_greater_than_zero'];
+                        }
+                    }
                 }
             })
+            return Object.values(this.errors).length > 0
         }
     },
     computed: {
         isConfirmButtonDisabledCp() {
-            // return Object.values(this.currentUserData).includes('')
-            return false; //@TODO
+            return Object.values(this.currentUserData).includes('')
         }
     }
 }
@@ -124,6 +155,10 @@ export default {
             font-size: 24px;
             line-height: 32px;
         }
+    }
+
+    .text_field {
+        margin-bottom: 8px;
     }
 }
 </style>

@@ -45,9 +45,9 @@
             @close="handlePopupClose('remove')"
         />
 
-        <PopupUserData :userData="selectedRow" v-if="popups.add" @close="handlePopupClose('add')" />
+        <PopupUserData :userData="selectedRow" v-if="popups.add" @close="handlePopupClose('add')" @added="employeeAddedHandler"/>
 
-        <PopupUserData :userData="selectedRow" v-if="popups.edit" @close="handlePopupClose('edit')" isEdit/>
+        <PopupUserData :userData="selectedRow" v-if="popups.edit" @close="handlePopupClose('edit')" isEdit @updated="employeeUpdatedHandler"/>
     </div>
 </template>
 
@@ -110,6 +110,20 @@ export default {
                 id: -1,
                 last_name: "",
             }
+        },
+        employeeAddedHandler(data) {
+            this.popups.add = false;
+            this.allEmployees.push(data);
+            this.showSnackbar(this.$translations[this.language]['employee_added']);
+        },
+        employeeUpdatedHandler(data) {
+            this.popups.edit = false;
+            this.allEmployees.forEach((item, index) => {
+                if (item.id === data.id) {
+                    this.allEmployees[index] = {...data}
+                }
+            })
+            this.showSnackbar(this.$translations[this.language]['data_updated']);
         },
         handleEditButtonClicked(selectedRow) {
             this.selectedRow = selectedRow;

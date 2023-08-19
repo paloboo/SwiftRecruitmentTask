@@ -1,9 +1,10 @@
 <template>
-    <div class="text_field" :class="{'active': isInputFocused || inputValue!=='', 'error': localError!==''}">
+    <div class="text_field" :class="{'active': isInputFocused || inputValue!==''}">
         <div class="text_field_content">
             <div class="content_label">
                 <span>{{ capitalizeFirstLetter(label) }}</span></div>
             <input
+                :class="{'error': error!==''}"
                 @blur="isInputFocused = false"
                 @focus="isInputFocused = true"
                 class="content_input"
@@ -12,7 +13,7 @@
                 :type="type" />
         </div>
         <p class="text_field_error">
-            {{capitalizeFirstLetter(localError)}}
+            {{capitalizeFirstLetter(error)}}
         </p>
     </div>
 </template>
@@ -42,13 +43,11 @@ export default {
         return {
             inputValue: this.modelValue,
             isInputFocused: false,
-            localError: this.error,
         };
     },
     watch: {
         modelValue(newValue) {
             this.inputValue = newValue;
-            this.localError = '';
         }
     },
     methods: {
@@ -71,6 +70,7 @@ export default {
                 background-color: v-bind('displayColorGetter("neutral0")');
                 left: 8px;
                 padding: 0 4px;
+                pointer-events: none;
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);

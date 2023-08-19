@@ -1,6 +1,6 @@
 <template>
     <div class="table_row">
-        <div class="row_single_cell table_row_dimensions" v-for="description in Object.keys(tableRowData)">
+        <div class="row_single_cell table_row_dimensions" v-for="description in rowOrder">
             <span class="cell_description">{{$translations[language][description]}}:</span>
             <a v-if="description==='email'" class="cell_value" :href="'mailto:'+tableRowData[description]">
                 {{tableRowData[description]}}
@@ -31,6 +31,11 @@ export default {
 
                 }
             }
+        }
+    },
+    data() {
+        return {
+            rowOrder: ['id', 'first_name', 'last_name', 'email', 'gender', 'earnings', 'experience'],
         }
     }
 }
