@@ -1,6 +1,7 @@
 {
   "en": {
     "add_employee": "add employee",
+    "cancel": "cancel",
     "display_mode": "display mode",
     "earnings": "earnings",
     "edit": "edit",
@@ -14,10 +15,12 @@
     "remove": "remove",
     "remove_confirmation": "are you sure you want to delete the selected user",
     "results_per_page": "results per page",
-    "sort": "sort by"
+    "sort": "sort by",
+    "yes_delete": "yes, delete"
   },
   "pl": {
     "add_employee": "dodaj pracownika",
+    "cancel": "anuluj",
     "display_mode": "tryb wyświetlania",
     "earnings": "zarobki",
     "edit": "edytuj",
@@ -31,6 +34,7 @@
     "remove": "usuń",
     "remove_confirmation": "czy na pewno chcesz usunąć wybranego użytkownika",
     "results_per_page": "wyników na stronę",
-    "sort": "sortuj"
+    "sort": "sortuj",
+    "yes_delete": "tak, usuń"
   }
 }

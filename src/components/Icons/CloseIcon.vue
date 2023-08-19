@@ -18,4 +18,13 @@ svg {
         stroke: v-bind("displayColorGetter('neutral900')");
         transition: stroke .3s ease-in-out;
     }
+
+    &:hover {
+        @media screen and (min-width: 1280px) {
+            path,
+            circle {
+                stroke: v-bind('displayColorGetter("slate100")');
+            }
+        }
+    }
 }</style>

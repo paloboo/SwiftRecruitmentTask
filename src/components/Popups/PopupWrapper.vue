@@ -90,6 +90,7 @@ export default {
             }
 
             .close_bar_icon {
+                cursor: pointer;
                 height: 16px;
                 width: 16px;
 
