@@ -10,7 +10,8 @@
                 <h3>{{ capitalizeFirstLetter($translations[language][isEdit ? 'edit_employee' : 'add_employee']) }}</h3>
             </div>
             <template v-for="field in inputsOrder" :key="field">
-                <RadioboxList v-if="field==='gender'" :title="$translations[language][field]" :options="['female', 'male']" v-model="currentUserData[field]"/>
+                <RadioboxList v-if="field==='gender'" :title="$translations[language][field]"
+                              :options="['female', 'male']" v-model="currentUserData[field]"/>
                 <TextField v-else
                            v-model="currentUserData[field]"
                            :label="$translations[language][field]"
@@ -71,13 +72,18 @@ export default {
                             "experience": Number(this.currentUserData.experience),
                         }),
                     })
-                        .then(response => response.json())
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(response.status);
+                            }
+                            return response.json()
+                        })
                         .then(data => {
-                            console.log('Zaktualizowano pracownika:', data);
                             this.$emit('updated', data);
                         })
                         .catch(error => {
-                            console.error('Wystąpił błąd:', error);
+                            this.$emit('close');
+                            this.showSnackbar(this.$translations[this.language]['something_went_wrong'] + '. '+ error, 10000, 'error')
                         })
                         .finally(() => {
                             this.requestLock = false;
@@ -97,13 +103,18 @@ export default {
                             "experience": Number(this.currentUserData.experience),
                         }),
                     })
-                        .then(response => response.json())
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(response.status);
+                            }
+                            return response.json()
+                        })
                         .then(data => {
-                            console.log('Dodano nowego pracownika:', data);
                             this.$emit('added', data);
                         })
                         .catch(error => {
-                            console.error('Wystąpił błąd:', error);
+                            this.$emit('close');
+                            this.showSnackbar(this.$translations[this.language]['something_went_wrong'] + '. '+ error, 10000, 'error')
                         }).finally(() => {
                         this.requestLock = false;
                     });
