@@ -88,8 +88,8 @@ export default {
             border-radius: 8px 8px 0 0;
             display: flex;
             height: 24px;
-            max-width: 550px;
             justify-content: end;
+            max-width: 550px;
             padding: 0 8px;
             position: relative;
             width: calc(100% - 32px);
@@ -105,8 +105,8 @@ export default {
                 width: 16px;
 
                 @media screen and (min-width: 1280px) {
-                    width: 24px;
                     height: 24px;
+                    width: 24px;
                 }
 
                 svg {
@@ -140,8 +140,8 @@ export default {
                 margin-top: 24px;
 
                 .button {
-                    width: 50%;
                     max-width: 200px;
+                    width: 50%;
                 }
             }
         }

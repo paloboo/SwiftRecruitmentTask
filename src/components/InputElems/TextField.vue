@@ -106,7 +106,7 @@ export default {
         .text_field_error {
             font-size: 12px;
             font-weight: 500;
-            color: v-bind('displayColorGetter("red500")') !important;
+            color: v-bind('displayColorGetter("red500")');
             height: 24px;
             line-height: 18px;
         }

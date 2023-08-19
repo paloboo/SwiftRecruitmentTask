@@ -14,8 +14,8 @@ import Snackbar from "../components/Views/Snackbar.vue";
 export default {
     name: "Layout",
     components: {
+        MainNav,
         Snackbar,
-        MainNav
     }
 }
 </script>
@@ -51,7 +51,6 @@ export default {
             :deep(h4),
             :deep(h5),
             :deep(p),{
-                //color: v-bind('displayColorGetter("neutral900")');
                 transition: color .3s ease-in-out;
             }
 

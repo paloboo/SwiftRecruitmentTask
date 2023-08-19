@@ -1,7 +1,7 @@
 <template>
     <PopupWrapper
-        :confirmButtonDesc="$translations[language][isEdit ? 'save' : 'add']"
         :cancelButtonDesc="$translations[language]['cancel']"
+        :confirmButtonDesc="$translations[language][isEdit ? 'save' : 'add']"
         :isConfirmButtonDisabled="isConfirmButtonDisabledCp"
         @confirm="handleConfirmButtonClicked"
     >
@@ -10,12 +10,16 @@
                 <h3>{{ capitalizeFirstLetter($translations[language][isEdit ? 'edit_employee' : 'add_employee']) }}</h3>
             </div>
             <template v-for="field in inputsOrder" :key="field">
-                <RadioboxList v-if="field==='gender'" :title="$translations[language][field]"
-                              :options="['female', 'male']" v-model="currentUserData[field]"/>
+                <RadioboxList v-if="field==='gender'"
+                              :title="$translations[language][field]"
+                              :options="['female', 'male']"
+                              v-model="currentUserData[field]"
+                />
                 <TextField v-else
-                           v-model="currentUserData[field]"
+                           :error="errors[field]"
                            :label="$translations[language][field]"
-                           :error="errors[field]"/>
+                           v-model="currentUserData[field]"
+                />
             </template>
         </div>
     </PopupWrapper>

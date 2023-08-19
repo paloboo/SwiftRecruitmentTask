@@ -9,11 +9,12 @@
             </div>
             <div class="table_title_sort_by" v-if="allEmployees.length>0">
                 <Dropdown
-                    :dropdownDesc="$translations[language]['sort']"
-                    :options="Object.keys(allEmployees[0])"
                     :currentOption="sortedBy"
+                    :dropdownDesc="$translations[language]['sort']"
+                    isTranslated
+                    :options="Object.keys(allEmployees[0])"
                     @optionChanged="(option) => sort(option)"
-                    isTranslated/>
+                />
                 <div class="sort_by_btn" :class="{'rotated': sortingAsc}">
                     <Btn @click="sort(sortedBy)" type="edit">
                         <ArrowIcon/>
@@ -29,27 +30,44 @@
                 @sort="sort"
             />
             <TableRow
-                v-for="row in allEmployees.slice(paginationRange.from, paginationRange.to)"
+                @edit="handleEditButtonClicked"
                 :key="row.id"
+                @remove="handleRemoveButtonClicked"
                 :rowOrder="rowOrder"
                 :tableRowData="row"
-
-                @edit="handleEditButtonClicked"
-                @remove="handleRemoveButtonClicked"
+                v-for="row in allEmployees.slice(paginationRange.from, paginationRange.to)"
             />
-            <Pagination :totalAmount="allEmployees.length" @rangeChanged="handlePaginationRangeChange"/>
+            <Pagination
+                @rangeChanged="handlePaginationRangeChange"
+                :totalAmount="allEmployees.length"
+            />
         </template>
         <PopupRemoveConfirm
-            v-if="popups.remove"
             :chosenEmployee="selectedRow"
-            @confirm="removeConfirmed"
             @close="handlePopupClose('remove')"
+            @confirm="removeConfirmed"
+            v-if="popups.remove"
         />
 
-        <PopupUserData :userData="selectedRow" v-if="popups.add" @close="handlePopupClose('add')" @added="employeeAddedHandler"/>
+        <PopupUserData
+            @added="employeeAddedHandler"
+            @close="handlePopupClose('add')"
+            :userData="selectedRow"
+            v-if="popups.add"
+        />
 
-        <PopupUserData :userData="selectedRow" v-if="popups.edit" @close="handlePopupClose('edit')" isEdit @updated="employeeUpdatedHandler"/>
-        <PopupDataLoadingFailed v-if="popups.loadingFailed" @close="handlePopupClose('loadingFailed')" @confirm="reloadPage"/>
+        <PopupUserData
+            @close="handlePopupClose('edit')"
+            isEdit
+            @updated="employeeUpdatedHandler"
+            :userData="selectedRow"
+            v-if="popups.edit"
+        />
+        <PopupDataLoadingFailed
+            @close="handlePopupClose('loadingFailed')"
+            @confirm="reloadPage"
+            v-if="popups.loadingFailed"
+        />
     </div>
 </template>
 
@@ -58,20 +76,20 @@ import ArrowIcon from "../Icons/ArrowIcon.vue";
 import Btn from "../InputElems/Btn.vue";
 import Dropdown from "../InputElems/Dropdown.vue";
 import Pagination from "../InputElems/Pagination.vue";
+import PopupDataLoadingFailed from "../Popups/PopupDataLoadingFailed.vue";
 import PopupRemoveConfirm from "../Popups/PopupRemoveConfirm.vue";
 import PopupUserData from "../Popups/PopupUserData.vue"
 import TableHeading from "./TableHeading.vue";
 import TableRow from "./TableRow.vue";
-import PopupDataLoadingFailed from "../Popups/PopupDataLoadingFailed.vue";
 
 export default {
     name: "Table",
     components: {
-        PopupDataLoadingFailed,
         ArrowIcon,
         Btn,
         Dropdown,
         Pagination,
+        PopupDataLoadingFailed,
         PopupUserData,
         PopupRemoveConfirm,
         TableHeading,
@@ -243,13 +261,13 @@ export default {
 
             .sort_by_btn {
                 .button {
-                    width: 40px;
                     height: 40px;
+                    width: 40px;
 
                     :deep(span) {
                         display: flex;
-                        transition: transform .3s ease-in-out;
                         transform: rotate(90deg);
+                        transition: transform .3s ease-in-out;
                     }
                 }
 

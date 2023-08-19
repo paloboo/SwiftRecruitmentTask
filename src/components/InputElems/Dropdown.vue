@@ -141,8 +141,8 @@ export default {
                 width: 24px;
 
                 svg {
-                    width: 100%;
                     height: 100%;
+                    width: 100%;
                 }
             }
         }
@@ -154,8 +154,8 @@ export default {
             width: 24px;
 
             svg {
-                max-width: 100%;
                 max-height: 100%;
+                max-width: 100%;
             }
         }
     }
@@ -222,12 +222,12 @@ export default {
                 }
 
                 .top_bar_close_wrapper {
-                    width: 16px;
                     height: 16px;
+                    width: 16px;
 
                     svg {
-                        max-width: 100%;
                         max-height: 100%;
+                        max-width: 100%;
                     }
                 }
             }
@@ -256,12 +256,12 @@ export default {
                         }
 
                         .icon_wrapper {
-                            width: 24px;
                             height: 24px;
+                            width: 24px;
 
                             svg {
-                                width: 100%;
                                 height: 100%;
+                                width: 100%;
                             }
                         }
                     }
@@ -274,8 +274,8 @@ export default {
                     }
 
                     &.current {
-                        border-bottom: 1px solid transparent;
                         background-color: v-bind('displayColorGetter("gray200")');
+                        border-bottom: 1px solid transparent;
                         border-radius: 8px;
                         pointer-events: none;
                     }
@@ -339,8 +339,8 @@ export default {
                 }
 
                 .option_arrow_head {
-                    width: 20px;
                     height: 20px;
+                    width: 20px;
                 }
             }
         }

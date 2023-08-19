@@ -25,6 +25,12 @@ export default {
     name: "TableRow",
     components: {Btn},
     props: {
+        rowOrder: {
+            type: Array,
+            default() {
+                return []
+            }
+        },
         tableRowData: {
             type: Object,
             default() {
@@ -33,12 +39,6 @@ export default {
                 }
             }
         },
-        rowOrder: {
-            type: Array,
-            default() {
-                return []
-            }
-        }
     },
 }
 </script>

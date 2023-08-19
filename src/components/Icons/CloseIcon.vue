@@ -21,8 +21,8 @@ svg {
 
     &:hover {
         @media screen and (min-width: 1280px) {
-            path,
-            circle {
+            circle,
+            path {
                 stroke: v-bind('displayColorGetter("slate100")');
             }
         }

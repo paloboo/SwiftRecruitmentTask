@@ -1,8 +1,14 @@
 <template>
     <div class="table_heading">
-        <div class="heading_single table_row_dimensions" v-for="singleTitle in rowOrder" @click="$emit('sort', singleTitle)">
+        <div
+            class="heading_single table_row_dimensions"
+            @click="$emit('sort', singleTitle)"
+            :key="singleTitle"
+            v-for="singleTitle in rowOrder">
             <p>{{$translations[language][singleTitle]}}</p>
-            <div class="heading_single_arrow" :class="{'desc': !sortingAsc, 'show': sortedBy === singleTitle}">
+            <div
+                class="heading_single_arrow"
+                :class="{'desc': !sortingAsc, 'show': sortedBy === singleTitle}">
                 <ArrowIcon />
             </div>
         </div>
@@ -21,14 +27,14 @@ export default {
                 return []
             }
         },
+        sortedBy: {
+            type: String,
+            default: 'id'
+        },
         sortingAsc: {
             type: Boolean,
             default: true,
         },
-        sortedBy: {
-            type: String,
-            default: 'id'
-        }
     },
 }
 </script>

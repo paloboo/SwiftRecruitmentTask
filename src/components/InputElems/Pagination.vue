@@ -138,12 +138,12 @@ export default {
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
-                min-width: 24px;
                 min-height: 24px;
+                min-width: 24px;
 
                 svg {
-                    max-width: 16px;
                     max-height: 16px;
+                    max-width: 16px;
                 }
 
                 &.disabled {
@@ -162,8 +162,8 @@ export default {
                 span {
                     color: v-bind('displayColorGetter("neutral900")');
                     font-size: 12px;
-                    line-height: 14px;
                     font-weight: 700;
+                    line-height: 14px;
                 }
 
                 &.current {
