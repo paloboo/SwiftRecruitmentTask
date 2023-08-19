@@ -5,6 +5,7 @@
             <a v-if="description==='email'" class="cell_value" :href="'mailto:'+tableRowData[description]">
                 {{tableRowData[description]}}
             </a>
+            <span v-else-if="description==='gender'" class="cell_value">{{capitalizeFirstLetter($translations[language][tableRowData[description].toLowerCase()])}}</span>
             <span v-else class="cell_value">{{tableRowData[description]}}</span>
         </div>
         <div class="row_single_cell buttons table_row_dimensions">
