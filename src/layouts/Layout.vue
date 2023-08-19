@@ -1,5 +1,6 @@
 <template>
     <div class="layout">
+        <Snackbar />
         <MainNav />
         <div class="layout_container">
             <slot/>
@@ -9,9 +10,11 @@
 
 <script>
 import MainNav from "../components/Nav/MainNav.vue";
+import Snackbar from "../components/Views/Snackbar.vue";
 export default {
     name: "Layout",
     components: {
+        Snackbar,
         MainNav
     }
 }

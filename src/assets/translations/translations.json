@@ -16,6 +16,7 @@
     "remove_confirmation": "are you sure you want to delete the selected user",
     "results_per_page": "results per page",
     "sort": "sort by",
+    "user_removed": "user has been successfully deleted",
     "yes_delete": "yes, delete"
   },
   "pl": {
@@ -35,6 +36,7 @@
     "remove_confirmation": "czy na pewno chcesz usunąć wybranego użytkownika",
     "results_per_page": "wyników na stronę",
     "sort": "sortuj",
+    "user_removed": "użytkownik został pomyślnie usunięty",
     "yes_delete": "tak, usuń"
   }
 }

@@ -47,6 +47,10 @@ export default defineStore('mainStore', {
                 light: '#74E39A',
                 dark: '#01B636',
             },
+            green500: {
+                light: '#4BB543',
+                dark: '#01B636',
+            },
             neutral0: {
                 light: '#FFFFFF',
                 dark: '#222222',
@@ -105,8 +109,11 @@ export default defineStore('mainStore', {
             }
         },
         displayMode: 'light',
+        isSnackbarVisible: false,
         language: 'pl',
         requestLock: false,
+        snackbarMessage: '',
+        snackbarType: '',
     }),
     getters: {
         displayColorGetter: (state) => {

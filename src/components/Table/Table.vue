@@ -56,8 +56,6 @@ import Dropdown from "../InputElems/Dropdown.vue";
 import Pagination from "../InputElems/Pagination.vue";
 import PopupRemoveConfirm from "../Popups/PopupRemoveConfirm.vue";
 import TableHeading from "./TableHeading.vue";
-import TableRow from "./TableRow.vue";
-
 export default {
     name: "Table",
     components: {
@@ -114,22 +112,23 @@ export default {
                         'Content-Type': 'application/json',
                     },
                 })
-                .then(response => {
-                    if (response.ok) {
-                        console.log('Pracownik został usunięty.'); //TODO podmienic na snackbar
-                        this.allEmployees = this.allEmployees.filter(item => item.id!==this.selectedRow.id)
-                        this.selectedRow = {};
-                        this.popups.remove = false;
-                    } else {
-                        throw new Error('Wystąpił problem podczas usuwania pracownika.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Wystąpił błąd:', error);
-                })
-                .finally(() => {
-                    this.requestLock = false;
-                });
+                    .then(response => {
+                        if (response.ok) {
+                            console.log('Pracownik został usunięty.'); //TODO podmienic na snackbar
+                            this.allEmployees = this.allEmployees.filter(item => item.id!==this.selectedRow.id)
+                            this.selectedRow = {};
+                            this.popups.remove = false;
+                            this.showSnackbar(this.$translations[this.language]['user_removed'], 3000, 'success');
+                        } else {
+                            throw new Error('Wystąpił problem podczas usuwania pracownika.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Wystąpił błąd:', error);
+                    })
+                    .finally(() => {
+                        this.requestLock = false;
+                    });
             }
         },
         sort(column) {
@@ -188,8 +187,10 @@ export default {
             .catch(error => {
                 console.error('Wystąpił błąd:', error);
             });
-    },
+    }
 }
+
+import TableRow from "./TableRow.vue";
 </script>
 
 <style lang="scss" scoped>
