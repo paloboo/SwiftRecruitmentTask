@@ -18,7 +18,7 @@ export default {
         border-radius: 8px;
         height: max-content;
         left: 50%;
-        //opacity: 0;
+        max-width: calc(100% - 32px);
         padding: 8px 48px;
         pointer-events: none;
         position: fixed;
@@ -26,6 +26,11 @@ export default {
         transform: translateX(-50%);
         transition: top .3s ease-in-out;
         width: max-content;
+        z-index: 10;
+
+        @media screen and (min-width: 768px) {
+            max-width: 550px;
+        }
 
         &.success {
             background-color: v-bind('displayColorGetter("green500")');
@@ -42,7 +47,6 @@ export default {
         }
 
         &.show {
-            //opacity: 1;
             top: 24px;
         }
     }

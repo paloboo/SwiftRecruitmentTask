@@ -2,7 +2,7 @@
     <nav class="main_navigation">
         <div class="navigation_container">
             <Switcher @setCheckboxVal="changeDisplayStyle" :switcherTitle="$translations[language]['display_mode']+':'"/>
-            <Dropdown :options="languageOptions" :currentOption="language" direction="down" @optionChanged="(option) => changeLanguage(option)"/>
+            <Dropdown :options="languageOptions" :currentOption="language.toUpperCase()" direction="down" @optionChanged="(option) => changeLanguage(option)"/>
         </div>
     </nav>
 </template>

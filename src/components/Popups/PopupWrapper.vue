@@ -11,7 +11,7 @@
         <div class="popup_content">
             <slot></slot>
             <div class="popup_buttons">
-                <Btn :type="cancelButtonType" @click="$emit('cancel')">
+                <Btn :type="cancelButtonType" @click="$emit('close')">
                     {{ cancelButtonDesc }}
                 </Btn>
                 <Btn :type="confirmButtonType" @click="$emit('confirm')">
@@ -31,7 +31,7 @@ export default {
     props: {
         cancelButtonDesc: {
             type: String,
-            default: 'Anuluj'
+            default: 'znuluj'
         },
         cancelButtonType: {
             type: String,
@@ -39,12 +39,18 @@ export default {
         },
         confirmButtonDesc: {
             type: String,
-            default: 'Zapisz'
+            default: 'zapisz'
         },
         confirmButtonType: {
             type: String,
             default: 'add'
         },
+    },
+    created() {
+        document.querySelector('body').classList.add('block_scroll');
+    },
+    beforeUnmount() {
+        document.querySelector('body').classList.remove('block_scroll');
     }
 }
 </script>
@@ -110,11 +116,17 @@ export default {
             border-radius: 0 0 8px 8px;
             height: max-content;
             margin: 0 auto;
+            max-height: 60vh;
             max-width: 550px;
+            overflow-y: auto;
             padding: 16px;
             position: relative;
             width: calc(100% - 32px);
             z-index: 3;
+
+            @media screen and (min-width: 1280px) {
+                padding: 32px;
+            }
 
             .popup_buttons {
                 display: flex;

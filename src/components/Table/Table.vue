@@ -1,9 +1,9 @@
 <template>
-    <div class="table" >
+    <div class="table">
         <div class="table_title">
             <div class="title_btn_wrapper">
                 <h1>{{ $translations[currentLanguageCp]['employee_list'] }}</h1>
-                <Btn type="add">
+                <Btn type="add" @click="popups.add = true">
                     {{ $translations[currentLanguageCp]['add_employee'] }}
                 </Btn>
             </div>
@@ -46,6 +46,10 @@
             @confirm="removeConfirmed"
             @close="handlePopupClose('remove')"
         />
+
+        <PopupUserData :userData="selectedRow" v-if="popups.add" @close="handlePopupClose('add')" />
+
+        <PopupUserData :userData="selectedRow" v-if="popups.edit" @close="handlePopupClose('edit')" isEdit/>
     </div>
 </template>
 
@@ -55,15 +59,19 @@ import Btn from "../InputElems/Btn.vue";
 import Dropdown from "../InputElems/Dropdown.vue";
 import Pagination from "../InputElems/Pagination.vue";
 import PopupRemoveConfirm from "../Popups/PopupRemoveConfirm.vue";
+import PopupUserData from "../Popups/PopupUserData.vue"
 import TableHeading from "./TableHeading.vue";
+import TableRow from "./TableRow.vue";
+
 export default {
     name: "Table",
     components: {
-        PopupRemoveConfirm,
         ArrowIcon,
-        Dropdown,
         Btn,
+        Dropdown,
         Pagination,
+        PopupUserData,
+        PopupRemoveConfirm,
         TableHeading,
         TableRow,
     },
@@ -79,22 +87,41 @@ export default {
                 edit: false,
                 remove: false,
             },
-            selectedRow: {},
+            selectedRow: {
+                email: "",
+                earnings: "",
+                experience: "",
+                first_name: "",
+                gender: "",
+                id: -1,
+                last_name: "",
+            },
             sortedBy: 'id',
             sortingAsc: true,
         }
     },
     methods: {
+        clearSelectedRow() {
+            this.selectedRow = {
+                id: -1,
+                first_name: "",
+                last_name: "",
+                email: "",
+                gender: "",
+                earnings: 0,
+                experience: 0
+            }
+        },
         handleEditButtonClicked(selectedRow) {
-            console.log('remove')
-            console.log(selectedRow)
+            this.selectedRow = selectedRow;
+            this.popups.edit = true;
         },
         handlePaginationRangeChange(range) {
             this.paginationRange = {...range}
         },
         handlePopupClose(type) {
             this.popups[type] = false;
-            this.selectedRow = {};
+            this.clearSelectedRow();
         },
         handleRemoveButtonClicked(selectedRow) {
             this.popups.remove = true;
@@ -103,7 +130,6 @@ export default {
             console.log(selectedRow)
         },
         removeConfirmed() {
-            console.log('asd')
             if (!this.requestLock) {
                 this.requestLock = true;
                 fetch(`http://localhost:3000/employees/${this.selectedRow.id}`, {
@@ -115,9 +141,8 @@ export default {
                     .then(response => {
                         if (response.ok) {
                             console.log('Pracownik został usunięty.'); //TODO podmienic na snackbar
-                            this.allEmployees = this.allEmployees.filter(item => item.id!==this.selectedRow.id)
-                            this.selectedRow = {};
-                            this.popups.remove = false;
+                            this.allEmployees = this.allEmployees.filter(item => item.id !== this.selectedRow.id);
+                            this.handlePopupClose('remove');
                             this.showSnackbar(this.$translations[this.language]['user_removed'], 3000, 'success');
                         } else {
                             throw new Error('Wystąpił problem podczas usuwania pracownika.');
@@ -189,8 +214,6 @@ export default {
             });
     }
 }
-
-import TableRow from "./TableRow.vue";
 </script>
 
 <style lang="scss" scoped>
