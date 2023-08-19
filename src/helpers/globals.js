@@ -12,6 +12,9 @@ export default {
             }
             return str.charAt(0).toUpperCase() + str.slice(1);
         },
+        baseURL() {
+            return 'http://localhost:6543/employees'
+        },
         showSnackbar(message, duration=3000, type = 'success') {
             this.isSnackbarVisible = true;
             this.snackbarType = type;

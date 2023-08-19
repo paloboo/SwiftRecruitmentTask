@@ -62,7 +62,7 @@ export default {
             if (!this.validateForm()) {
                 this.requestLock = true;
                 if (this.isEdit) {
-                    fetch(`http://localhost:3000/employees/${this.currentUserData.id}`, {
+                    fetch(`${this.baseURL()}/${this.currentUserData.id}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ export default {
                             this.requestLock = false;
                         });
                 } else {
-                    fetch('http://localhost:3000/employees', {
+                    fetch(this.baseURL(), {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

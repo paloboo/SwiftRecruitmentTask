@@ -170,7 +170,7 @@ export default {
         removeConfirmed() {
             if (!this.requestLock) {
                 this.requestLock = true;
-                fetch(`http://localhost:3000/employees/${this.selectedRow.id}`, {
+                fetch(`${this.baseURL()}/${this.selectedRow.id}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -209,7 +209,7 @@ export default {
         },
     },
     created() {
-        fetch('http://localhost:3000/employees')
+        fetch(this.baseURL())
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Network response was not ok: ${response.status}`);
