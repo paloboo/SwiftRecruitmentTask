@@ -49,6 +49,7 @@
         <PopupUserData :userData="selectedRow" v-if="popups.add" @close="handlePopupClose('add')" @added="employeeAddedHandler"/>
 
         <PopupUserData :userData="selectedRow" v-if="popups.edit" @close="handlePopupClose('edit')" isEdit @updated="employeeUpdatedHandler"/>
+        <PopupDataLoadingFailed v-if="popups.loadingFailed" @close="handlePopupClose('loadingFailed')" @confirm="reloadPage"/>
     </div>
 </template>
 
@@ -61,10 +62,12 @@ import PopupRemoveConfirm from "../Popups/PopupRemoveConfirm.vue";
 import PopupUserData from "../Popups/PopupUserData.vue"
 import TableHeading from "./TableHeading.vue";
 import TableRow from "./TableRow.vue";
+import PopupDataLoadingFailed from "../Popups/PopupDataLoadingFailed.vue";
 
 export default {
     name: "Table",
     components: {
+        PopupDataLoadingFailed,
         ArrowIcon,
         Btn,
         Dropdown,
@@ -85,6 +88,7 @@ export default {
             popups: {
                 add: false,
                 edit: false,
+                loadingFailed: false,
                 remove: false,
             },
             rowOrder: ['id', 'first_name', 'last_name', 'email', 'gender', 'earnings', 'experience'],
@@ -142,6 +146,9 @@ export default {
             this.popups.remove = true;
             this.selectedRow = selectedRow;
         },
+        reloadPage() {
+            location.reload()
+        },
         removeConfirmed() {
             if (!this.requestLock) {
                 this.requestLock = true;
@@ -195,6 +202,7 @@ export default {
                 this.allEmployees = data;
             })
             .catch(error => {
+                this.popups.loadingFailed = true;
                 console.error('Wystąpił błąd:', error);
             });
     }
