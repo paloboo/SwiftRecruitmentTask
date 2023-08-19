@@ -1,6 +1,6 @@
 <template>
     <div class="table_heading">
-        <div class="heading_single table_row_dimensions" v-for="singleTitle in headingData" @click="$emit('sort', singleTitle)">
+        <div class="heading_single table_row_dimensions" v-for="singleTitle in rowOrder" @click="$emit('sort', singleTitle)">
             <p>{{$translations[language][singleTitle]}}</p>
             <div class="heading_single_arrow" :class="{'desc': !sortingAsc, 'show': sortedBy === singleTitle}">
                 <ArrowIcon />
@@ -15,7 +15,7 @@ export default {
     name: "TableHeading",
     components: {ArrowIcon},
     props: {
-        headingData: {
+        rowOrder: {
             type: Array,
             default() {
                 return []
@@ -28,10 +28,6 @@ export default {
         sortedBy: {
             type: String,
             default: 'id'
-        }
-    },
-    data() {
-        return {
         }
     },
 }

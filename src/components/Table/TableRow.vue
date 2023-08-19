@@ -32,13 +32,14 @@ export default {
 
                 }
             }
+        },
+        rowOrder: {
+            type: Array,
+            default() {
+                return []
+            }
         }
     },
-    data() {
-        return {
-            rowOrder: ['id', 'first_name', 'last_name', 'email', 'gender', 'earnings', 'experience'],
-        }
-    }
 }
 </script>
 

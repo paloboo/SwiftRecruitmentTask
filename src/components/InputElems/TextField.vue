@@ -87,6 +87,7 @@ export default {
                 border: 1px solid v-bind('displayColorGetter("gray500")');
                 border-radius: 4px;
                 color: v-bind('displayColorGetter("neutral900")');
+                font-size: 14px;
                 height: 40px;
                 max-width: 328px;
                 padding: 0 8px;

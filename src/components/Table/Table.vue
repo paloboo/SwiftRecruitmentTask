@@ -23,15 +23,16 @@
         </div>
         <template v-if="allEmployees.length>0">
             <TableHeading
-                :headingData="Object.keys(allEmployees[0])"
+                :rowOrder="rowOrder"
                 :sortedBy="sortedBy"
                 :sortingAsc="sortingAsc"
                 @sort="sort"
             />
             <TableRow
-                :tableRowData="row"
                 v-for="row in allEmployees.slice(paginationRange.from, paginationRange.to)"
                 :key="row.id"
+                :rowOrder="rowOrder"
+                :tableRowData="row"
 
                 @edit="handleEditButtonClicked"
                 @remove="handleRemoveButtonClicked"
@@ -86,12 +87,13 @@ export default {
                 edit: false,
                 remove: false,
             },
+            rowOrder: ['id', 'first_name', 'last_name', 'email', 'gender', 'earnings', 'experience'],
             selectedRow: {
                 email: "",
                 earnings: "",
                 experience: "",
                 first_name: "",
-                gender: "",
+                gender: "female",
                 id: -1,
                 last_name: "",
             },
@@ -106,7 +108,7 @@ export default {
                 email: "",
                 experience: "",
                 first_name: "",
-                gender: "",
+                gender: "female",
                 id: -1,
                 last_name: "",
             }

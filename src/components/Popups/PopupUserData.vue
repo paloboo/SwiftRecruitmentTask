@@ -9,22 +9,28 @@
             <div class="user_data_title">
                 <h3>{{ capitalizeFirstLetter($translations[language][isEdit ? 'edit_employee' : 'add_employee']) }}</h3>
             </div>
-            <TextField v-for="field in inputsOrder" v-model="currentUserData[field]"
-                       :label="$translations[language][field]" :key="field"
-                       :error="errors[field]"/>
+            <template v-for="field in inputsOrder" :key="field">
+                <RadioboxList v-if="field==='gender'" :title="$translations[language][field]" :options="['female', 'male']" v-model="currentUserData[field]"/>
+                <TextField v-else
+                           v-model="currentUserData[field]"
+                           :label="$translations[language][field]"
+                           :error="errors[field]"/>
+            </template>
         </div>
     </PopupWrapper>
 </template>
 
 <script>
 import PopupWrapper from "./PopupWrapper.vue";
+import RadioboxList from "../InputElems/RadioboxList.vue";
 import TextField from "../InputElems/TextField.vue";
 
 export default {
     name: "PopupUserData",
     components: {
+        PopupWrapper,
+        RadioboxList,
         TextField,
-        PopupWrapper
     },
     props: {
         isEdit: {
@@ -51,13 +57,12 @@ export default {
             if (!this.validateForm()) {
                 this.requestLock = true;
                 if (this.isEdit) {
-                    fetch('http://localhost:3000/employees/1', {
+                    fetch(`http://localhost:3000/employees/${this.currentUserData.id}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            "id": this.currentUserData.id,
                             "first_name": this.currentUserData.first_name,
                             "last_name": this.currentUserData.last_name,
                             "email": this.currentUserData.email,
@@ -159,6 +164,10 @@ export default {
 
     .text_field {
         margin-bottom: 8px;
+    }
+
+    .radiobox_list {
+        margin-bottom: 32px;
     }
 }
 </style>
