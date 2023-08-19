@@ -1,5 +1,9 @@
 <template>
-    <PopupWrapper>
+    <PopupWrapper
+        :confirmButtonDesc="$translations[language][isEdit ? 'save' : 'add']"
+        :cancelButtonDesc="$translations[language]['cancel']"
+        :isConfirmButtonDisabled="isConfirmButtonDisabledCp"
+    >
         <div class="popup_user_data">
             <div class="user_data_title">
                 <h3>{{capitalizeFirstLetter($translations[language][isEdit ? 'edit_employee' : 'add_employee'])}}</h3>
@@ -37,6 +41,11 @@ export default {
             currentUserData: {...this.userData},
             inputsOrder: ['first_name', 'last_name', 'email', 'gender', 'earnings', 'experience'],
         }
+    },
+    computed: {
+        isConfirmButtonDisabledCp() {
+            return Object.values(this.currentUserData).includes('')
+        }
     }
 }
 </script>
@@ -44,7 +53,7 @@ export default {
 <style lang="scss" scoped>
     .popup_user_data {
         .user_data_title {
-            margin: 16px 0;
+            margin: 0 0 16px 0;
 
             h3 {
                 font-size: 24px;

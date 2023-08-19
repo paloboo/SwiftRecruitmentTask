@@ -14,7 +14,7 @@
                 <Btn :type="cancelButtonType" @click="$emit('close')">
                     {{ cancelButtonDesc }}
                 </Btn>
-                <Btn :type="confirmButtonType" @click="$emit('confirm')">
+                <Btn :type="confirmButtonType" @click="$emit('confirm')" :disabled="isConfirmButtonDisabled">
                    {{confirmButtonDesc}}
                 </Btn>
             </div>
@@ -31,7 +31,7 @@ export default {
     props: {
         cancelButtonDesc: {
             type: String,
-            default: 'znuluj'
+            default: 'cancel'
         },
         cancelButtonType: {
             type: String,
@@ -39,12 +39,16 @@ export default {
         },
         confirmButtonDesc: {
             type: String,
-            default: 'zapisz'
+            default: 'save'
         },
         confirmButtonType: {
             type: String,
             default: 'add'
         },
+        isConfirmButtonDisabled: {
+            type: Boolean,
+            default: false
+        }
     },
     created() {
         document.querySelector('body').classList.add('block_scroll');

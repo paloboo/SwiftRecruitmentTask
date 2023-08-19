@@ -1,5 +1,5 @@
 <template>
-    <button class="button" :class="[type]">
+    <button class="button" :class="[type, disabled ? 'disabled': '']">
         <span>
             <slot>
 
@@ -12,8 +12,14 @@
 export default {
     name: "Btn",
     props: {
-        type: String,
-        default: 'edit'
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        type: {
+            type: String,
+            default: 'edit'
+        }
     }
 }
 </script>
@@ -26,7 +32,12 @@ export default {
         height: max-content;
         outline: 1px solid transparent;
         padding: 4px 12px;
-        transition: background-color .3s ease-in-out;
+        transition: background-color .3s ease-in-out, opacity .3s ease-in-out;
+
+        &.disabled {
+            opacity: .2;
+            pointer-events: none;
+        }
 
 
         &:hover {

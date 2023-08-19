@@ -103,13 +103,13 @@ export default {
     methods: {
         clearSelectedRow() {
             this.selectedRow = {
-                id: -1,
-                first_name: "",
-                last_name: "",
+                earnings: "",
                 email: "",
+                experience: "",
+                first_name: "",
                 gender: "",
-                earnings: 0,
-                experience: 0
+                id: -1,
+                last_name: "",
             }
         },
         handleEditButtonClicked(selectedRow) {
