@@ -39,6 +39,7 @@ export default {
 .popup_remove_confirm {
     .remove_confirm_title {
         p {
+            color: v-bind('displayColorGetter("neutral900")');
             font-size: 16px;
             font-weight: 500;
             line-height: 24px;
@@ -54,6 +55,7 @@ export default {
         width: max-content;
 
         p, span {
+            color: v-bind('displayColorGetter("neutral900")');
             font-size: 14px;
             font-weight: 500;
             line-height: 18px;
