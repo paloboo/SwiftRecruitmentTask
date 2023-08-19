@@ -160,6 +160,7 @@ export default {
                 }
 
                 span {
+                    color: v-bind('displayColorGetter("neutral900")');
                     font-size: 12px;
                     line-height: 14px;
                     font-weight: 700;

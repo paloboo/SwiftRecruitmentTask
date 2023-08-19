@@ -2,9 +2,9 @@
     <div class="table">
         <div class="table_title">
             <div class="title_btn_wrapper">
-                <h1>{{ $translations[currentLanguageCp]['employee_list'] }}</h1>
+                <h1>{{ $translations[language]['employee_list'] }}</h1>
                 <Btn type="add" @click="popups.add = true">
-                    {{ $translations[currentLanguageCp]['add_employee'] }}
+                    {{ $translations[language]['add_employee'] }}
                 </Btn>
             </div>
             <div class="table_title_sort_by" v-if="allEmployees.length>0">
@@ -23,14 +23,12 @@
         </div>
         <template v-if="allEmployees.length>0">
             <TableHeading
-                :currentLanguage="currentLanguageCp"
                 :headingData="Object.keys(allEmployees[0])"
                 :sortedBy="sortedBy"
                 :sortingAsc="sortingAsc"
                 @sort="sort"
             />
             <TableRow
-                :currentLanguage="currentLanguageCp"
                 :tableRowData="row"
                 v-for="row in allEmployees.slice(paginationRange.from, paginationRange.to)"
                 :key="row.id"
@@ -78,6 +76,7 @@ export default {
     data() {
         return {
             allEmployees: [],
+            highestId: -1,
             paginationRange: {
                 from: 0,
                 to: 10,
@@ -126,8 +125,6 @@ export default {
         handleRemoveButtonClicked(selectedRow) {
             this.popups.remove = true;
             this.selectedRow = selectedRow;
-            console.log('edit')
-            console.log(selectedRow)
         },
         removeConfirmed() {
             if (!this.requestLock) {
@@ -169,34 +166,6 @@ export default {
                 this.allEmployees = this.allEmployees.sort((a, b) => a[this.sortedBy] > b[this.sortedBy] ? -1 : 1);
             }
         },
-        //     fetch('http://localhost:3000/employees/1', {
-        //         method: 'PUT',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify({
-        //             "id": "0",
-        //             "first_name": "Marya",
-        //             "last_name": "Jatczak",
-        //             "email": "mjatczak0@yolasite.com",
-        //             "gender": "Genderfluid",
-        //             "earnings": 21121.64,
-        //             "experience": 2,
-        //         }),
-        //     })
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             console.log('Zaktualizowano pracownika:', data);
-        //         })
-        //         .catch(error => {
-        //             console.error('Wystąpił błąd:', error);
-        //         });
-        // }
-    },
-    computed: {
-        currentLanguageCp() {
-            return this.language
-        }
     },
     created() {
         fetch('http://localhost:3000/employees')
@@ -224,6 +193,7 @@ export default {
     .table_title {
         .title_btn_wrapper {
             h1 {
+                color: v-bind('displayColorGetter("neutral900")');
                 font-size: 32px;
                 line-height: 48px;
                 text-transform: capitalize;

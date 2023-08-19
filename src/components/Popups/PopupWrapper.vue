@@ -120,7 +120,7 @@ export default {
             border-radius: 0 0 8px 8px;
             height: max-content;
             margin: 0 auto;
-            max-height: 60vh;
+            max-height: 80vh;
             max-width: 550px;
             overflow-y: auto;
             padding: 16px;
@@ -129,6 +129,7 @@ export default {
             z-index: 3;
 
             @media screen and (min-width: 1280px) {
+                max-height: 60vh;
                 padding: 32px;
             }
 

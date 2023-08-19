@@ -1,7 +1,7 @@
 <template>
     <div class="table_heading">
         <div class="heading_single table_row_dimensions" v-for="singleTitle in headingData" @click="$emit('sort', singleTitle)">
-            <p>{{$translations[currentLanguage][singleTitle]}}</p>
+            <p>{{$translations[language][singleTitle]}}</p>
             <div class="heading_single_arrow" :class="{'desc': !sortingAsc, 'show': sortedBy === singleTitle}">
                 <ArrowIcon />
             </div>
@@ -15,10 +15,6 @@ export default {
     name: "TableHeading",
     components: {ArrowIcon},
     props: {
-        currentLanguage: {
-            type: String,
-            default: ''
-        },
         headingData: {
             type: Array,
             default() {
@@ -57,6 +53,7 @@ export default {
             padding-left: 8px;
 
             p {
+                color: v-bind('displayColorGetter("neutral900")');
                 font-weight: 700;
                 text-transform: capitalize;
             }

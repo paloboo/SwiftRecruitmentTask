@@ -1,5 +1,5 @@
 <template>
-    <div class="text_field" :class="{'active': isInputFocused || inputValue!==''}">
+    <div class="text_field" :class="{'active': isInputFocused || inputValue!=='', 'error': localError!==''}">
         <div class="text_field_content">
             <div class="content_label">
                 <span>{{ capitalizeFirstLetter(label) }}</span></div>
@@ -12,7 +12,7 @@
                 :type="type" />
         </div>
         <p class="text_field_error">
-            {{error}}
+            {{capitalizeFirstLetter(localError)}}
         </p>
     </div>
 </template>
@@ -21,6 +21,10 @@
 export default {
     name: "TextField",
     props: {
+        error: {
+            type: String,
+            default: ''
+        },
         label: {
             type: String,
             default: ''
@@ -36,14 +40,15 @@ export default {
     },
     data() {
         return {
-            error: '',
             inputValue: this.modelValue,
             isInputFocused: false,
+            localError: this.error,
         };
     },
     watch: {
         modelValue(newValue) {
             this.inputValue = newValue;
+            this.localError = '';
         }
     },
     methods: {
@@ -87,6 +92,10 @@ export default {
                 padding: 0 8px;
                 width: calc(100% - 32px);
 
+                &.error {
+                    border: 1px solid v-bind('displayColorGetter("red500")');
+                }
+
                 &:focus {
                     outline: 1px solid v-bind('displayColorGetter("gray600")');
                 }
@@ -94,7 +103,11 @@ export default {
         }
 
         .text_field_error {
+            font-size: 12px;
+            font-weight: 500;
+            color: v-bind('displayColorGetter("red500")') !important;
             height: 24px;
+            line-height: 18px;
         }
 
         &.active {
