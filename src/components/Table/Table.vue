@@ -153,14 +153,13 @@ export default {
             if (!this.requestLock) {
                 this.requestLock = true;
                 fetch(`http://localhost:3000/employees/${this.selectedRow.id}`, {
-                    method: 'DELETE', // Ustawienie metody na DELETE
+                    method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                 })
                     .then(response => {
                         if (response.ok) {
-                            console.log('Pracownik został usunięty.'); //TODO podmienic na snackbar
                             this.allEmployees = this.allEmployees.filter(item => item.id !== this.selectedRow.id);
                             this.handlePopupClose('remove');
                             this.showSnackbar(this.$translations[this.language]['user_removed'], 3000, 'success');
@@ -168,8 +167,9 @@ export default {
                             throw new Error('Wystąpił problem podczas usuwania pracownika.');
                         }
                     })
-                    .catch(error => {
-                        console.error('Wystąpił błąd:', error);
+                    .catch(() => {
+                        this.showSnackbar(this.$translations[this.language]['something_went_wrong'], 10000, 'error')
+                        this.handlePopupClose('remove');
                     })
                     .finally(() => {
                         this.requestLock = false;
@@ -201,9 +201,8 @@ export default {
             .then(data => {
                 this.allEmployees = data;
             })
-            .catch(error => {
+            .catch(() => {
                 this.popups.loadingFailed = true;
-                console.error('Wystąpił błąd:', error);
             });
     }
 }
