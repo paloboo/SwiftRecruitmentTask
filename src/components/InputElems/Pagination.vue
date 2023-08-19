@@ -11,7 +11,12 @@
             <div class="buttons_single prev" :class="{'disabled': currentPage===1}" @click="handleArrowClick('down')">
                 <ArrowHeadIcon />
             </div>
-            <div v-for="page in paginationArrayCp" :key="page" @click="handleCurrentPageChange(page)" class="buttons_single" :class="{'current': Number(page)===currentPage, 'disabled': isNaN(Number(page))}">
+            <div
+                class="buttons_single"
+                :class="{'current': Number(page)===currentPage, 'disabled': isNaN(Number(page))}"
+                @click="handleCurrentPageChange(page)"
+                :key="page"
+                v-for="page in paginationArrayCp">
                 <span>
                     {{page}}
                 </span>
@@ -134,12 +139,15 @@ export default {
 
             .buttons_single {
                 align-items: center;
+                background-color: transparent;
+                border: 1px solid transparent;
                 border-radius: 50%;
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
                 min-height: 24px;
                 min-width: 24px;
+                transition: background-color .3s ease-in-out, border .3s ease-in-out;
 
                 svg {
                     max-height: 16px;

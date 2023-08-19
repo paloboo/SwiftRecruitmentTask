@@ -8,9 +8,10 @@
                 @blur="isInputFocused = false"
                 @focus="isInputFocused = true"
                 class="content_input"
-                v-model="inputValue"
                 @input="handleInput"
-                :type="type" />
+                :type="type"
+                v-model="inputValue"
+            />
         </div>
         <p class="text_field_error">
             {{capitalizeFirstLetter(error)}}

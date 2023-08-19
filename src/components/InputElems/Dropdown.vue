@@ -27,8 +27,9 @@
                 <div class="content_wrapper">
                     <div class="content_single"
                          :class="{'current': typeof option === 'object' ? option.name.toLowerCase() === chosenOption.toLowerCase() : option === chosenOption}"
-                         v-for="option in options" :key="option"
-                         @click="handleOptionClicked(typeof option === 'object' ? option.name : option)">
+                         @click="handleOptionClicked(typeof option === 'object' ? option.name : option)"
+                         :key="option"
+                         v-for="option in options">
                         <div class="single_with_icon" v-if="typeof option === 'object'">
                             <div class="icon_wrapper">
                                 <component :is="option.icon" />

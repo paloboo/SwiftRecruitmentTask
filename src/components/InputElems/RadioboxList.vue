@@ -4,7 +4,11 @@
             <span>{{capitalizeFirstLetter(title)}}</span>
         </div>
         <div class="list_wrapper">
-            <div class="list_option" v-for="option in options" :key="option" @click="handleRadioboxClick(option)">
+            <div
+                class="list_option"
+                @click="handleRadioboxClick(option)"
+                :key="option"
+                v-for="option in options">
                 <div class="option_circle">
                     <div class="circle_fill" :class="{'active': option === currentValue}"></div>
                 </div>
