@@ -290,8 +290,12 @@ export default {
 
         .list_tint {
             background-color: v-bind('displayColorGetter("backgroundOpacity")');
+            bottom: 0;
             height: 100%;
+            left: 0;
             position: fixed;
+            right: 0;
+            top: 0;
             width: 100%;
             z-index: 1;
 
@@ -309,6 +313,7 @@ export default {
     }
 
     &.open {
+        z-index: 99;
         .dropdown_chosen_option {
             .chosen_option_value {
                 .option_arrow_head {
