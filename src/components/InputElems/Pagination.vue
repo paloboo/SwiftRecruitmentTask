@@ -122,11 +122,17 @@ export default {
             position: relative;
         }
 
-        .dropdown {
+        :deep(.dropdown) {
             @media screen and (min-width: 768px) {
                 bottom: 0;
                 left: 0;
                 position: absolute;
+            }
+
+            .dropdown_list_wrapper {
+                @media screen and (min-width: 1280px) {
+                    max-width: 60px;
+                }
             }
         }
 

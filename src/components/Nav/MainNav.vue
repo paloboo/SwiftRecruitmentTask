@@ -75,8 +75,15 @@ export default {
                 min-width: 118px;
             }
 
-            .dropdown {
+            :deep(.dropdown) {
                 height: max-content;
+                width: 95px;
+
+                @media screen and (min-width: 1280px) {
+                    .dropdown_list_wrapper {
+                        max-width: 95px;
+                    }
+                }
             }
         }
     }

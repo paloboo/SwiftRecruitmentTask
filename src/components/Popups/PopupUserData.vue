@@ -128,7 +128,9 @@ export default {
         validateForm() {
             Object.keys(this.currentUserData).forEach(item => {
                 if (this.currentUserData[item] === '') {
-                    this.errors[item] = 'nie moze byc puste';
+                    this.errors[item] = this.$translations[this.language]['field_must_not_be_empty'];
+                } else if (this.currentUserData[item].toString().length>100) {
+                    this.errors[item] = this.$translations[this.language]['maximum_number_of_characters_is_100'];
                 } else {
                     if (item === 'email') {
                         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
